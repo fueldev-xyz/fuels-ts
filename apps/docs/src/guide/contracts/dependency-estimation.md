@@ -1,11 +1,11 @@
-# Transaction Dependency Estimation
+# 事务依赖估算
 
-[Previously](./variable-outputs.md), we mentioned that a contract call might require you to manually specify external contracts or variable outputs.
+[之前](./variable-outputs.md)，我们提到合约调用可能需要您手动指定外部合约或变量输出。
 
-However, the SDK always automatically estimates these dependencies and double-checks if everything is in order whenever you invoke a contract function or attempt to send a transaction.
+然而，无论何时您调用合约函数或尝试发送事务，SDK 都会自动估算这些依赖关系，并在一切井然有序时进行双重检查。
 
-The SDK uses the `estimateTxDependencies` helper function to set any missing dependencies identified during the estimation process. This requires simulating the transaction a few times in the background.
+SDK 使用 `estimateTxDependencies` 辅助函数来设置估算过程中发现的任何缺失的依赖项。这需要在后台模拟事务几次。
 
 <<< @/../../../packages/account/src/providers/provider.ts#Provider-sendTransaction{ts:line-numbers}
 
-While relying on the SDK's automatic estimation is a decent default behavior, we recommend manually specifying the dependencies if they are known in advance to avoid the performance impact of the estimation process.
+虽然依赖于 SDK 的自动估算是一个不错的默认行为，但我们建议如果依赖项在预先知道的情况下，手动指定它们，以避免估算过程的性能影响。

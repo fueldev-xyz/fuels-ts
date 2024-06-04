@@ -1,13 +1,13 @@
-# Working with Contract Logs
+# 处理合约日志
 
-When you log a value within a contract method, it generates a log entry that is added to the log receipt, and the variable type is recorded in the contract's ABI. The SDK enables you to parse these values into TypeScript types.
+当你在合约方法中记录一个值时，它会生成一个日志条目，添加到日志收据中，并且变量类型会记录在合约的 ABI 中。SDK 可以让你将这些值解析为 TypeScript 类型。
 
-Consider the following example contract:
+考虑下面的示例合约：
 
 <<< @/../../docs-snippets/test/fixtures/forc-projects/log-values/src/main.sw#log-1{rust:line-numbers}
 
-To access the logged values in TypeScript, use the `logs` property in the `FunctionInvocationResult` of a contract call result. The logs data will be stored in an `Array<any>`:
+要在 TypeScript 中访问记录的值，可以使用合约调用结果的 `FunctionInvocationResult` 中的 `logs` 属性。日志数据将存储在一个 `Array<any>` 中：
 
 <<< @/../../docs-snippets/src/guide/contracts/logs.test.ts#log-2{ts:line-numbers}
 
-This approach allows you to work seamlessly with logged values in your contract, making it easier to understand and debug the contract's behavior.
+这种方法让你可以无缝地处理合约中记录的值，使得更容易理解和调试合约的行为。

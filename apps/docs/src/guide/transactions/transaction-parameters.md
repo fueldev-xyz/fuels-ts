@@ -2,7 +2,7 @@
 
 Transaction parameters allow you to configure various aspects of your blockchain transactions. Dependent on these parameters, it may introduce a [transaction policy](./transaction-policies.md). The parameters are:
 
-1. Gas Price - The price you're willing to pay for each unit of [gas](https://docs.fuel.network/docs/intro/glossary/#gas) consumed during the transaction execution.
+1. Gas Price - The price you're willing to pay for each unit of [gas](https://docs.fueldev.xyz/docs/intro/glossary/#gas) consumed during the transaction execution.
 1. Gas Limit - The maximum amount of gas you're willing to allow the transaction to consume. If the amount of gas a transaction will use is greater than the gas limit, the transaction will fail.
 1. Max Fee - The maximum amount you're willing to pay for the transaction using the base asset. This is the price of each unit of gas multiplied by the amount of gas used.
 1. Maturity - The number of blocks that must pass before the transaction can be included in a block. This is useful for time-sensitive transactions, such as those involving time-locked assets.

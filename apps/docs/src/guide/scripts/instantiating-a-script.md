@@ -2,7 +2,7 @@
   import { data } from '../../versions.data'
   const { forc } = data
   const url = `
-    https://docs.fuel.network/docs/sway/introduction/
+    https://docs.fueldev.xyz/docs/sway/introduction/
   `
 </script>
 

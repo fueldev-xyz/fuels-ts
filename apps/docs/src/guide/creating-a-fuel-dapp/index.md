@@ -52,8 +52,8 @@ To get started:
 - Start a local Fuel dev server: pnpm fuels:dev
 - Run the frontend: pnpm dev
 
--> TS SDK docs: https://docs.fuel.network/docs/fuels-ts/
--> Sway docs: https://docs.fuel.network/docs/sway/
+-> TS SDK docs: https://docs.fueldev.xyz/docs/fuels-ts/
+-> Sway docs: https://docs.fueldev.xyz/docs/sway/
 -> If you have any questions, check the Fuel forum: https://forum.fuel.network/
 ```
 
@@ -189,4 +189,4 @@ Whenever you want to add a new feature to your dApp and quickly prototype things
 
 - If you have any questions or need help, feel free to reach out to us on the [Official Fuel Forum](https://forum.fuel.network/).
 
-- If you want to learn more about the Fuel Stack, check out the [Fuel Docs](https://docs.fuel.network/).
+- If you want to learn more about the Fuel Stack, check out the [Fuel Docs](https://docs.fueldev.xyz/).

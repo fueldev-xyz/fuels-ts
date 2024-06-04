@@ -106,7 +106,7 @@ Here you can customize all build flags, e.g. to build programs in `release` mode
 
 Check also:
 
-- [Forc docs](https://docs.fuel.network/docs/forc/commands/forc_build/#forc-build)
+- [Forc docs](https://docs.fueldev.xyz/docs/forc/commands/forc_build/#forc-build)
 
 ## `deployConfig`
 

@@ -3,11 +3,11 @@
   const { fuels } = data
 </script>
 
-# Installation
+# 安装
 
-We expect you to install the [Fuel Toolchain](https://docs.fuel.network/docs/sway/introduction/fuel_toolchain/#the-fuel-toolchain) before using this library. Follow [this guide](https://docs.fuel.network/guides/installation/) to get this installed.
+在使用此库之前，我们建议你安装 [Fuel Toolchain](https://docs.fueldev.xyz/docs/sway/introduction/fuel_toolchain/#the-fuel-toolchain)。请按照[本指南](https://docs.fueldev.xyz/guides/installation/)进行安装。
 
-The next step is to add the `fuels` dependency to your project. You can do this using the following command:
+下一步是将 `fuels` 依赖添加到你的项目中。你可以使用以下命令来完成：
 
 ::: code-group
 
@@ -21,11 +21,11 @@ pnpm add fuels@{{fuels}}
 
 :::
 
-**Note**: Use version `{{fuels}}` to ensure compatibility with `testnet` network—check the [docs](https://docs.fuel.network/guides/installation/#using-the-latest-toolchain).
+**注意**：请使用版本 `{{fuels}}` 以确保与 `testnet` 网络兼容——查看[文档](https://docs.fueldev.xyz/guides/installation/#using-the-latest-toolchain)。
 
 ---
 
-If you are using bun, you'll need to add a `trustedDependencies` field to your `package.json`:
+如果你使用的是 bun，你需要在 `package.json` 中添加一个 `trustedDependencies` 字段：
 
 ```json
 {
@@ -34,6 +34,6 @@ If you are using bun, you'll need to add a `trustedDependencies` field to your `
 }
 ```
 
-This is to ensure that bun includes the `fuel-core` and `forc` binaries in your project.
+这是为了确保 bun 在你的项目中包含 `fuel-core` 和 `forc` 二进制文件。
 
-> IMPORTANT: We don't officially support `bun` yet; use it at your own risk.
+> 重要：我们尚未正式支持 `bun`；使用它需自行承担风险。

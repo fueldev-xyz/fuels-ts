@@ -1,17 +1,17 @@
-# Estimating Contract Call Cost
+# 估算合约调用成本
 
-The `getTransactionCost` function provided by the [Provider](../../api/Account/Provider.md) allows you to estimate the cost of a specific contract call. The return type, `TransactionCost`, is an object containing relevant information for the estimation:
+[Provider](../../api/Account/Provider.md) 提供的 `getTransactionCost` 函数允许你估算特定合约调用的成本。返回类型 `TransactionCost` 是一个包含估算相关信息的对象：
 
 <<< @/../../../packages/account/src/providers/provider.ts#cost-estimation-1{ts:line-numbers}
 
-The following example demonstrate how to get the estimated transaction cost for:
+以下示例演示了如何获取以下情况的估算事务成本：
 
-## 1. Single contract call transaction:
+## 1. 单个合约调用事务：
 
 <<< @/../../docs-snippets/src/guide/contracts/cost-estimation.test.ts#cost-estimation-1{ts:line-numbers}
 
-## 2. Multiple contract calls transaction:
+## 2. 多个合约调用事务：
 
 <<< @/../../docs-snippets/src/guide/contracts/cost-estimation.test.ts#cost-estimation-2{ts:line-numbers}
 
-You can use the transaction cost estimation to set the gas limit for an actual call or display the estimated cost to the user.
+你可以使用事务成本估算来为实际调用设置气体限制，或向用户显示估算成本。

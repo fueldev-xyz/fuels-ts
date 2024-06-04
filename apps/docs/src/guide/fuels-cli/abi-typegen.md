@@ -2,13 +2,13 @@
   import { data } from '../../versions.data'
   const { forc } = data
   const abiUrl = `
-    https://docs.fuel.network/docs/sway/sway-program-types/smart_contracts/#the-abi-declaration
+    https://docs.fueldev.xyz/docs/sway/sway-program-types/smart_contracts/#the-abi-declaration
   `
   const contractsUrl = `
-    https://docs.fuel.network/docs/sway/sway-program-types/smart_contracts/
+    https://docs.fueldev.xyz/docs/sway/sway-program-types/smart_contracts/
   `
   const scriptsUrl = `
-    https://docs.fuel.network/docs/sway/sway-program-types/scripts/
+    https://docs.fueldev.xyz/docs/sway/sway-program-types/scripts/
   `
 </script>
 

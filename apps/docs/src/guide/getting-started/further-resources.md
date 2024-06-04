@@ -1,11 +1,11 @@
-# Further Resources
+# 更多资源
 
-For a more in-depth, step-by-step guide on working with the wider Fuel ecosystem, check out the [Developer Quickstart](https://docs.fuel.network/guides/quickstart/). This guide covers:
+如果你想深入了解如何使用更广泛的 Fuel 生态系统，可以查看 [开发者快速入门](https://docs.fueldev.xyz/guides/quickstart/)。该指南涵盖了：
 
-1. Installing all tools needed to develop with the Fuel ecosystem.
+1. 安装开发 Fuel 生态系统所需的所有工具。
 
-2. Writing your first Sway Project.
+2. 编写你的第一个 Sway 项目。
 
-3. Deploying your contract.
+3. 部署你的合约。
 
-4. Building a simple front-end dApp to interact with your deployed contract.
+4. 构建一个简单的前端 dApp 来与你部署的合约进行交互。

@@ -1,15 +1,15 @@
-# Transferring assets
+# 资产转移
 
-Consider a scenario where you're interacting with a smart contract and need to transfer assets to a recipient's wallet. The `addTransfer` enables you to combine these actions into a single transaction seamlessly.
+考虑一个场景，您正在与智能合约进行交互，并且需要将资产转移到接收方的钱包中。`addTransfer`方法使您能够将这些操作无缝地组合到单个交易中。
 
-The `addTransfer` method allows you to append an asset transfer to your contract call transaction. You can use it is shown in the following example:
+`addTransfer`方法允许您将资产转移附加到您的合约调用交易中。您可以按照以下示例使用它：
 
 <<< @/../../docs-snippets/src/guide/contracts/add-transfer.test.ts#add-transfer-1{ts:line-numbers}
 
-In the previous example, we first use a contract call to the `echo_u64` function. Following this, `addTransfer` is added to chain call to include a transfer of `100` units of the `BaseAssetId` in the transaction.
+在上面的示例中，我们首先使用合约调用调用 `echo_u64` 函数。随后，`addTransfer` 被添加到链式调用中，以在交易中包含对 `BaseAssetId` 的 `100` 单位的转移。
 
-## Batch Transfer
+## 批量转移
 
-You can add a batch of transfers into a single transaction by using `addBatchTransfer`:
+您可以使用 `addBatchTransfer` 将一批转移添加到单个交易中：
 
 <<< @/../../docs-snippets/src/guide/contracts/add-transfer.test.ts#add-transfer-2{ts:line-numbers}

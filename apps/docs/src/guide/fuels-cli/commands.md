@@ -28,7 +28,7 @@ Creating a sample `fuel.config.ts` file:
 npx fuels@{{fuels}} init --contracts ./my-contracts/* --output ./src/sway-contracts-api
 ```
 
-Using [Forc workspaces](https://docs.fuel.network/docs/forc/workspaces/)? Try this instead:
+Using [Forc workspaces](https://docs.fueldev.xyz/docs/forc/workspaces/)? Try this instead:
 
 ```console-vue
 npx fuels@{{fuels}} init --workspace ./sway-programs --output ./src/sway-programs-api
@@ -51,7 +51,7 @@ In a nutshell:
 
 ### See more
 
-- [Forc workspaces](https://docs.fuel.network/docs/forc/workspaces/)
+- [Forc workspaces](https://docs.fueldev.xyz/docs/forc/workspaces/)
 
 ## `fuels build`
 
@@ -72,7 +72,7 @@ Examples:
 npx fuels@{{fuels}} build
 ```
 
-1.  Build all Sway programs under your `workspace` using `forc` <sup>[1](https://docs.fuel.network/docs/forc/commands/forc_build/)</sup>
+1.  Build all Sway programs under your `workspace` using `forc` <sup>[1](https://docs.fueldev.xyz/docs/forc/commands/forc_build/)</sup>
 1.  Generate types for them using `fuels-typegen` <sup>[2](#fuels-typegen)</sup>
 
 ```console-vue
@@ -94,7 +94,7 @@ npx fuels@{{fuels}} deploy
 
 > [!NOTE] Note
 > We recommend using the `fuels deploy` command only when you are deploying contracts to a local node.
-> If you are deploying contracts to a live network like the Testnet, we recommend using the [`forc deploy`](https://docs.fuel.network/docs/intro/quickstart-contract/#deploy-to-testnet) command instead.
+> If you are deploying contracts to a live network like the Testnet, we recommend using the [`forc deploy`](https://docs.fueldev.xyz/docs/intro/quickstart-contract/#deploy-to-testnet) command instead.
 
 The `fuels deploy` command does two things:
 
@@ -163,7 +163,7 @@ For more info, check:
 
 ## `fuels versions`
 
-Check for version incompatibilities between your [Fuel Toolchain](https://docs.fuel.network/docs/sway/introduction/fuel_toolchain/#the-fuel-toolchain) component versions, matching them against the ones supported by the Typescript SDK version that you have.
+Check for version incompatibilities between your [Fuel Toolchain](https://docs.fueldev.xyz/docs/sway/introduction/fuel_toolchain/#the-fuel-toolchain) component versions, matching them against the ones supported by the Typescript SDK version that you have.
 
 ```console-vue
 npx fuels@{{fuels}} versions

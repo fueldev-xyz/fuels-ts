@@ -1,6 +1,6 @@
-# Usage
+# 用法
 
-With the Fuels dependency set up, you can now create a React component that will connect to the Fuel provider and retrieve the base asset balance for a given wallet address. Here's an example of how to do this:
+有了 Fuels 依赖设置，现在你可以创建一个连接到 Fuel 提供程序并检索给定钱包地址的基本资产余额的 React 组件。以下是如何实现的示例：
 
 <!-- TODO: Create properly code snippet on new package: `app/react-app` after https://github.com/FuelLabs/fuels-ts/pull/827 got merged -->
 
@@ -27,9 +27,9 @@ function App() {
 export default App;
 ```
 
-## CDN Usage (browser only)
+## CDN 用法（仅限浏览器）
 
-For a quick test or just playing around, you can load it in your Web Apps straight from our CDN.
+为了快速测试或仅仅是玩玩，你可以直接从我们的 CDN 在你的 Web 应用程序中加载它。
 
 ```html
 <script type="module">

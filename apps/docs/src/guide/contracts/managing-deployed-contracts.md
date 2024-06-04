@@ -1,14 +1,14 @@
-# Managing Deployed Contracts
+# 管理部署的合约
 
-To interact with a deployed contract using the SDK without redeploying it, you only need the contract ID and its JSON ABI. This allows you to bypass the deployment setup.
+要使用 SDK 与已部署的合约进行交互，而不需要重新部署它，你只需要合约 ID 和它的 JSON ABI。这使你可以绕过部署设置。
 
-## Contract ID
+## 合约 ID
 
-The `contractId` property from the [`Contract`](../../api/Program/Contract.md) class is of type [`AbstractAddress`](../../api/Interfaces/AbstractAddress.md), an abstract class that is exclusively extended by the [`Address`](../../api/Address/Address.md) class.
+[`Contract`](../../api/Program/Contract.md) 类的 `contractId` 属性是 [`AbstractAddress`](../../api/Interfaces/AbstractAddress.md) 类型，这是一个抽象类，专门由 [`Address`](../../api/Address/Address.md) 类扩展。
 
-The [`Address`](../../api/Address/Address.md) class wraps all methods from the [`AbstractAddress`](../../api/Interfaces/AbstractAddress.md) class and adds a single property: `bech32Address`. This property is a string encoded in [`Bech32`](../types/bech32.md) format, recognizable by the human-readable prefix `fuel` followed by the separator `1`.
+[`Address`](../../api/Address/Address.md) 类包装了 [`AbstractAddress`](../../api/Interfaces/AbstractAddress.md) 类的所有方法，并添加了一个属性：`bech32Address`。该属性是一个以 [`Bech32`](../types/bech32.md) 格式编码的字符串，可通过人类可读的前缀 `fuel`，后跟分隔符 `1` 进行识别。
 
-When you log the `contractId` property of an instantiated Contract using `console.log`, the output appears as follows:
+当你使用 `console.log` 记录一个已实例化合约的 `contractId` 属性时，输出如下：
 
 ```console
   Address {
@@ -18,14 +18,14 @@ When you log the `contractId` property of an instantiated Contract using `consol
 
 ---
 
-If you have already an instantiated and deployed contract in hands you can create another contract instance simply by using the `contractId` property and the contract JSON ABI:
+如果你已经有了一个实例化和部署的合约，你可以简单地使用 `contractId` 属性和合约的 JSON ABI 来创建另一个合约实例：
 
 <<< @/../../docs-snippets/src/guide/contracts/managing-deployed-contracts.test.ts#managing-deployed-contracts-1{ts:line-numbers}
 
-The previous example assumes that you have a [`Contract`](../../api/Program/Contract.md) instance at hand. However, some Fuel tools and Sway use the [`b256`](../types/bits256.md) type format, a hex-encoded string-like type, for contract IDs.
+前面的示例假设你手头有一个 [`Contract`](../../api/Program/Contract.md) 实例。然而，一些 Fuel 工具和 Sway 使用了 [`b256`](../types/bits256.md) 类型格式，即十六进制编码的类似字符串的类型，用于合约 ID。
 
-You might have this format instead, for example, if you have deployed your contract with `forc deploy`.
+例如，如果你使用 `forc deploy` 部署了你的合约，则可能会有这种格式。
 
-The process of instantiating a [`Contract`](../../api/Program/Contract.md) remains the same when using a contract ID of type `b256`:
+当使用 `b256` 类型的合约 ID 时，实例化一个 [`Contract`](../../api/Program/Contract.md) 的过程保持不变：
 
 <<< @/../../docs-snippets/src/guide/contracts/managing-deployed-contracts.test.ts#managing-deployed-contracts-2{ts:line-numbers}

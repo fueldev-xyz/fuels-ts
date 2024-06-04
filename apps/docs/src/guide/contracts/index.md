@@ -1,14 +1,14 @@
-# Contracts
+# 合约
 
-In the Fuel Network, contracts play a crucial role in facilitating interactions between users and the decentralized applications built on top of the network. Once you've deployed a contract, you may want to perform various tasks such as:
+在 Fuel 网络中，合约在促进用户与构建在网络之上的去中心化应用之间的交互中发挥着至关重要的作用。一旦您部署了合约，您可能想要执行各种任务，例如：
 
-1. Calling contract methods;
-2. Configuring call and transaction parameters like gas price, byte price, and gas limit;
-3. Forwarding coins and gas in your contract calls;
-4. Reading and interpreting returned values and logs.
+1. 调用合约方法；
+2. 配置调用和事务参数，如燃气价格、字节价格和燃气限制；
+3. 在合约调用中转发货币和燃气；
+4. 读取和解释返回的值和日志。
 
-For instance, consider a Sway contract with two ABI methods called `echo_str_8(str[8])` and `echo_u8(u8)`. After deploying the contract, you can call the methods as follows:
+例如，考虑一个具有两个 ABI 方法的 Sway 合约，分别为 `echo_str_8(str[8])` 和 `echo_u8(u8)`。在部署合约后，您可以如下调用这些方法：
 
 <<< @/../../docs-snippets/src/guide/contracts/index.test.ts#echo-values{ts:line-numbers}
 
-The example above demonstrates a simple contract call using default configurations. The following sections will explore how to further configure various parameters for contract calls, allowing for more advanced interactions with your deployed contracts in the Fuel Network.
+上面的示例演示了使用默认配置进行简单合约调用。接下来的部分将探讨如何进一步配置合约调用的各种参数，从而实现对在 Fuel 网络中部署的合约进行更高级交互的方式。

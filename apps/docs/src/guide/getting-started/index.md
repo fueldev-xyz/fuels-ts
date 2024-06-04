@@ -1,3 +1,3 @@
-# Getting Started
+# 入门指南
 
-This guide will walk you through the process of setting up and using the Fuels-ts library in your front-end project.
+本指南将引导你在前端项目中设置和使用 Fuels-ts 库的过程。

@@ -1,22 +1,22 @@
 <script setup>
   import { data } from './versions.data'
   const { forc, fuels, fuelCore } = data
-  const url = `https://docs.fuel.network/docs/forc/`
+  const url = `https://docs.fueldev.xyz/docs/forc/`
   const logoSrc = './fuel-logo.png'
 </script>
 
-# The Fuel TypeScript SDK
+# Fuel TypeScript SDK
 
-The Fuel TypeScript SDK provides methods and utilities in TypeScript, for developing on or interacting with the Fuel network and its [ecosystem](https://docs.fuel.network/docs/intro/what-is-fuel/).
+Fuel TypeScript SDK 提供了 TypeScript 方法和工具，用于在 Fuel 网络及其[生态系统](https://docs.fueldev.xyz/docs/intro/what-is-fuel/)上进行开发或交互。
 
-Using the SDK you can:
+使用该 SDK 你可以：
 
-- Deploy, interact with, and test [Sway](https://docs.fuel.network/docs/sway/) contracts.
-- Bootstrap a dApp and local development environment using the [create fuels CLI](https://docs.fuel.network/docs/fuels-ts/creating-a-fuel-dapp/).
-- Generate and import wallets from private key, mnemonic, or JSON and safely store them on the client.
-- Craft custom transactions and mutate them by adding resources, policies and signers and submit them.
-- Generate types for [Sway programs](https://docs.fuel.network/docs/sway/sway-program-types/) using [typegen](https://docs.fuel.network/docs/fuels-ts/fuels-cli/abi-typegen/) to give end-to-end type safety.
+- 部署、交互和测试 [Sway](https://docs.fueldev.xyz/docs/sway/) 合约。
+- 使用 [create fuels CLI](https://docs.fueldev.xyz/docs/fuels-ts/creating-a-fuel-dapp/) 启动一个 dApp 和本地开发环境。
+- 通过私钥、助记词或 JSON 生成和导入钱包，并在客户端上安全存储它们。
+- 制作自定义交易，并通过添加资源、策略和签名者来修改它们并提交。
+- 使用 [typegen](https://docs.fueldev.xyz/docs/fuels-ts/fuels-cli/abi-typegen/) 为 [Sway 程序](https://docs.fueldev.xyz/docs/sway/sway-program-types/) 生成类型，以实现端到端的类型安全。
 
-## Version
+## 版本
 
-This documentation was generated using Fuels `v{{fuels}}`, Fuel Core `v{{fuelCore}}`, Sway `v{{forc}}`, and Forc `v{{forc}}`.
+本文档使用 Fuels `v{{fuels}}`，Fuel Core `v{{fuelCore}}`，Sway `v{{forc}}` 和 Forc `v{{forc}}` 生成。

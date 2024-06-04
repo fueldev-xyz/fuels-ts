@@ -11,9 +11,9 @@ There are mainly two steps to get our dApp live on the testnet:
 
 ## Deploying the Contract
 
-We will be using [`forc`](https://docs.fuel.network/docs/forc/) to deploy our contracts to the testnet. `forc` is a part of the Fuel Toolchain.
+We will be using [`forc`](https://docs.fueldev.xyz/docs/forc/) to deploy our contracts to the testnet. `forc` is a part of the Fuel Toolchain.
 
-> If you don't have the Fuel Toolchain installed, follow [this guide](https://docs.fuel.network/guides/installation/) to install it.
+> If you don't have the Fuel Toolchain installed, follow [this guide](https://docs.fueldev.xyz/guides/installation/) to install it.
 
 The first step is to `cd` into the directory containing your contract:
 
@@ -27,7 +27,7 @@ And then, run the following command and follow the instructions to deploy the co
 forc deploy --testnet
 ```
 
-> You can check out [this guide](https://docs.fuel.network/docs/intro/quickstart-contract/#deploy-to-testnet) for more information on deploying a contract to the testnet.
+> You can check out [this guide](https://docs.fueldev.xyz/docs/intro/quickstart-contract/#deploy-to-testnet) for more information on deploying a contract to the testnet.
 
 You should see a message similar to this:
 
