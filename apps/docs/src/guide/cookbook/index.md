@@ -1,3 +1,3 @@
 # Cookbook
 
-This section covers more advanced use cases that can be satisfied by combining various features of the SDK. As such, it assumes that you have already made yourself familiar with the previous chapters of this book.
+本节涵盖了一些更高级的用例，这些用例可以通过结合 SDK 的各种功能来实现。因此，它假设你已经熟悉了本书前面的章节。

@@ -1,254 +1,256 @@
-# Error Codes
+# 错误代码
 
-Here is a list of the expected error codes the SDK can throw. These error codes are used to help understand the error that has been thrown with potential resolutions.
+以下是 SDK 可能抛出的预期错误代码列表。这些错误代码用于帮助理解抛出的错误，并提供可能的解决方法。
 
 ## `ABI_MAIN_METHOD_MISSING`
 
-When your ABI does not have a main method.
+当您的 ABI 没有主方法时。
 
-This can be resolved by adding a main method to your ABI.
+这可以通过向 ABI 添加主方法来解决。
 
 ## `ABI_TYPES_AND_VALUES_MISMATCH`
 
-When the arguments supplied to the function do not match the minimum required input length.
+当提供给函数的参数与所需的最小输入长度不匹配时。
 
-Check that the arguments supplied to the function, match the required type.
+检查提供给函数的参数是否与所需类型匹配。
 
 ## `ACCOUNT_REQUIRED`
 
-When an [`Account`](../../api/Account/Account.md) is required for an operation. This will usually be in the form of a [`Wallet`](../wallets/index.md).
+在操作中需要 [`Account`](../../api/Account/Account.md)。通常会是一个 [`Wallet`](../wallets/index.md)。
 
-It could be caused during the deployments of contracts when an account is required to sign the transaction. This can be resolved by following the deployment guide [here](../contracts/deploying-contracts.md).
+这可能是在部署合约期间需要账户签名事务时引起的。可以通过按照[此处](../contracts/deploying-contracts.md)的部署指南解决。
 
 ## `CONVERTING_FAILED`
 
-When converting a big number into an incompatible format.
+将大数转换为不兼容的格式时。
 
-Ensure that the value you've supplied to the big number is compatible with the value you are converting to.
+确保您提供给大数的值与要转换为的值兼容。
 
 ## `DUPLICATED_POLICY`
 
-When there are more than policies with the same type, for a transaction.
+当事务中存在相同类型的策略时。
 
-Ensure that there are no duplicate (by type) policies for a transaction.
+确保事务中没有重复（按类型）的策略。
 
 ## `ERROR_BUILDING_BLOCK_EXPLORER_URL`
 
-When more than one of the following options is passed: `path`, `address`, `txId`, `blockNumber`.
+当传递了多于以下选项之一时：`path`、`address`、`txId`、`blockNumber`。
 
-Check that only one of the following options is passed: `path`, `address`, `txId`, `blockNumber`.
+检查只传递了以下选项之一：`path`、`address`、`txId`、`blockNumber`。
 
 ## `FUNCTION_NOT_FOUND`
 
-When the function with the given name, signature or selector is not found in the ABI.
+在 ABI 中找不到具有给定名称、签名或选择器的函数时。
 
-Check that the function name, signature or selector is correct and exits on the ABI.
+检查函数名称、签名或选择器是否在 ABI 中正确存在。
 
 ## `GAS_LIMIT_TOO_LOW`
 
-When the gas limit is lower than the minimum gas limit.
+当气体限制低于最小气体限制时。
 
-Increase the gas limit to be greater than the minimum gas limit.
+将气体限制增加到大于最小气体限制。
 
 ## `GAS_PRICE_TOO_LOW`
 
-When the gas price is lower than the minimum gas price.
+当气体价格低于最低气体价格时。
 
-Increase the gas price to be greater than the minimum gas price.
+将气体价格增加到大于最低气体价格。
 
 ## `HD_WALLET_ERROR`
 
-A hardware wallet will throw for unsupported configurations.
+硬件钱包将根据不受支持的配置引发错误。
 
-The error message will determine which element of the configuration is incorrect. It could be due to the public or private key or when configuring to/from an extended key.
+错误消息将确定配置中的哪个元素是不正确的。可能是由于公钥或私钥不正确，或者在配置到/从扩展密钥时。
 
 ## `INVALID_CHECKSUM`
 
-Checksum validation failed for the provided mnemonic.
+提供的助记词的校验和验证失败。
 
-Ensure that the mnemonic is correct.
+确保助记词正确。
 
 ## `INVALID_CONFIGURABLE_CONSTANTS`
 
-When the program type either: does _not_ have configurable constants to be set; or the provided configurable constant does not belong to the program type, as defined by its ABI.
+当程序类型没有可配置的常量要设置时；或者所提供的可配置常量不属于程序类型，如其 ABI 所定义的那样。
 
-Ensure the configurable constants provided are correct and are defined in ABI.
+确保所提供的可配置常量是正确的，并且在 ABI 中定义。
 
 ## `INVALID_COMPONENT`
 
-When an expected component is not found in the ABI or is malformed.
+在 ABI 中未找到或格式不正确的预期组件时。
 
-Ensure that you have correctly formed Sway types for [Arrays](../types/arrays.md) and [Vectors](../types/vectors.md).
+确保您对 [数组](../types/arrays.md) 和 [向量](../types/vectors.md) 使用了正确形式的 Sway 类型。
 
 ## `INVALID_CREDENTIALS`
 
-When the password provided is incorrect.
+提供的密码不正确时。
 
-Ensure that the password is correct.
+确保密码是正确的。
 
 ## `INVALID_DATA`
 
-When the value is more than the max value.
+当值超过最大值时。
 
-Ensure that the value is less than the max value.
+确保值小于最大值。
 
 ## `INVALID_ENTROPY`
 
-When the entropy is not: between 16 and 32 bytes; a multiple of 4.
+当熵不是介于 16 和 32 字节之间时；不是 4 的倍数时。
 
-Ensure that the entropy is between 16 and 32 bytes and a multiple of 4.
+确保熵介于 16 和 32 字节之间，并且是 4 的倍数。
 
 ## `INVALID_EVM_ADDRESS`
 
-When the provided EVM address is invalid.
+提供的 EVM 地址无效时。
 
-Ensure that the [EVM address](../types/evm-address.md) is valid.
+确保 [EVM 地址](../types/evm-address.md) 有效。
 
 ## `INVALID_INPUT_PARAMETERS`
 
-When the provided input parameters are _not_ valid.
+提供的输入参数无效时。
 
-The error message will determine which parameter is missing. It could be that the provided program type is not one of the following `contract`, `script`, or `predicate`.
+错误消息将确定缺少哪个参数。可能是由于提供的程序类型不是以下之一 `contract`、`script` 或 `predicate`。
 
 ## `INVALID_MNEMONIC`
 
-When the supplied mnemonic is invalid.
+提供的助记词无效时。
 
-Check the message for more details. It could be that the mnemonic phrase word length is \_not\_\_ one of the following: 12, 15, 18, 21, or 24 lengths.
+检查消息以获取更多详细信息。可能是因为助记词短语的长度不是以下之一：12、15、18、21 或 24。
 
 ## `INVALID_MULTICALL`
 
-When the multi-call has a call that returns a heap type that is not the last call, or the multi-call has more than one call that returns a heap type.
+当多次调用中有一个调用返回的堆类型不是最后一个调用，或者多次
 
-Ensure that the multi-call has only one call that returns a heap type (which should be the last call).
+# 错误代码
+
+以下是 SDK 可能抛出的预期错误代码列表。这些错误代码用于帮助理解抛出的错误，并提供可能的解决方法。
 
 ## `INVALID_PASSWORD`
 
-When the provided password is incorrect.
+提供的密码不正确时。
 
-Ensure that the password is correct.
+确保密码是正确的。
 
 ## `INVALID_POLICY_TYPE`
 
-When the supplied policy type is invalid for the given Script.
+当提供的策略类型对于给定的脚本无效时。
 
-Check the policy type is defined in `PolicyType`.
+检查策略类型是否在 `PolicyType` 中定义。
 
 ## `INVALID_PUBLIC_KEY`
 
-When the provided public key is invalid.
+提供的公钥无效时。
 
-Ensure that the public key is valid.
+确保公钥是有效的。
 
 ## `INVALID_RECEIPT_TYPE`
 
-When the receipt type is invalid.
+收据类型无效时。
 
-Check the type is within `ReceiptType`.
+检查类型是否在 `ReceiptType` 范围内。
 
 ## `INVALID_REQUEST`
 
-When the request to the Fuel node fails, error messages are propagated from the Fuel node.
+当对 Fuel 节点的请求失败时，错误消息从 Fuel 节点传播。
 
-Check the error message from the Fuel node.
+检查来自 Fuel 节点的错误消息。
 
 ## `INVALID_SEED`
 
-When the seed length is not between 16 and 64 bytes.
+种子长度不在 16 到 64 字节之间时。
 
-Ensure that the seed length is between 16 and 64 bytes.
+确保种子长度在 16 到 64 字节之间。
 
 ## `INVALID_TRANSACTION_INPUT`
 
-When the input type is invalid.
+输入类型无效时。
 
-Check the type is within `InputType`.
+检查类型是否在 `InputType` 范围内。
 
 ## `INVALID_TRANSACTION_OUTPUT`
 
-When the output type is invalid.
+输出类型无效时。
 
-Check the type is within `OutputType`.
+检查类型是否在 `OutputType` 范围内。
 
 ## `INVALID_TRANSACTION_STATUS`
 
-When the transaction status received from the node is unexpected.
+从节点接收到的交易状态不符时。
 
-Check the status received is within `TransactionStatus`.
+检查接收到的状态是否在 `TransactionStatus` 范围内。
 
 ## `INVALID_TRANSACTION_TYPE`
 
-When the transaction type from the Fuel Node is _not_ valid.
+来自 Fuel 节点的交易类型 _不_ 有效时。
 
-The type is within [`TransactionType`](../../api/Account/TransactionType.md).
+类型在 [`TransactionType`](../../api/Account/TransactionType.md) 范围内。
 
 ## `INVALID_TTL`
 
-When the TTL is less than or equal to zero.
+TTL 小于或等于零时。
 
-Ensure that the TTL is a number and that the TTL is greater than zero.
+确保 TTL 是一个数字，并且 TTL 大于零。
 
 ## `INVALID_WORD_LIST`
 
-When the word list length is not equal to 2048.
+单词列表长度不等于 2048 时。
 
-The word list provided to the mnemonic length should be equal to 2048.
+提供给助记词的单词列表长度应等于 2048。
 
 ## `JSON_ABI_ERROR`
 
-When an ABI type does not conform to the correct format.
+当 ABI 类型不符合正确的格式时。
 
-It is usually caused by an incorrect type/s within your program, check our type [docs](../types/index.md) here for information on the types we support and their expected format.
+通常是由于程序中的类型/数不正确造成的，请查看此处我们支持的类型和其期望的格式的类型[文档](../types/index.md)。
 
 ## `LOG_TYPE_NOT_FOUND`
 
-When the log type ID supplied can not be found in the ABI.
+提供的日志类型 ID 无法在 ABI 中找到时。
 
-Check that the log type ID is correct and exists in the ABI.
+检查日志类型 ID 是否正确并存在于 ABI 中。
 
 ## `MISSING_CONNECTOR`
 
-A connector is missing when it's required for a given operation.
+在给定操作需要连接器时，连接器丢失。
 
-Ensure that a connector has been supplied to the `Account` or `Wallet`.
+确保已向 `Account` 或 `Wallet` 提供了连接器。
 
 ## `MISSING_PROVIDER`
 
-A provider is missing when it's required for a given operation.
+在给定操作需要提供程序时，提供程序丢失。
 
-It could be caused by the provider not being set for either an [`Account`](../../api/Account/index.md) or a [`Wallet`](../wallets/index.md) - use the `connect` method to attach a provider.
+这可能是由于未为 [`Account`](../../api/Account/index.md) 或 [`Wallet`](../wallets/index.md) 设置提供程序而导致的 - 使用 `connect` 方法附加提供程序。
 
 ## `MISSING_REQUIRED_PARAMETER`
 
-When a required parameter has not been supplied to a given method.
+当给定方法未提供所需参数时。
 
-The error message will determine which parameter is missing. This could be caused during type generation when neither `inputs` nor `filepaths` are supplied (at least one is required).
+错误消息将确定缺少哪个参数。这可能是在类型生成期间引起的，当未提供 `inputs` 或 `filepaths` 时（至少需要一个）。
 
 ## `NODE_INFO_CACHE_EMPTY`
 
-When the Fuel Node info cache is empty; This is usually caused by not being connected to the Fuel Node.
+当 Fuel 节点信息缓存为空时；这通常是由于未连接到 Fuel 节点引起的。
 
-Ensure that the provider has connected to a Fuel Node successfully.
+确保提供程序已成功连接到 Fuel 节点。
 
 ## `TYPE_NOT_FOUND`
 
-When the type with the given type ID is not found in the ABI.
+当给定类型 ID 的类型在 ABI 中未找到时。
 
-Check that the type ID is correct and exists in the ABI.
+检查类型 ID 是否正确并存在于 ABI 中。
 
 ## `TYPE_NOT_SUPPORTED`
 
-When an unexpected type has been detected - the error message will determine which type is incorrect.
+检测到意外类型时 - 错误消息将确定哪个类型不正确。
 
-Check the type against your ABI and ensure that it is correct. You can find a list of all our types [here](../types/index.md).
+检查类型与 ABI 是否匹配，并确保它是正确的。您可以在[此处](../types/index.md)找到我们所有类型的列表。
 
 ## `WALLET_MANAGER_ERROR`
 
-A wallet manager will throw for a multitude of reasons. The error message will determine which element of the configuration is incorrect.
+钱包管理器将由于多种原因而抛出错误。错误消息将确定配置中的哪个元素是不正确的。
 
-It could be that the passphrase is incorrect and/or the wallet does _not_ exist in the manager.
+可能是由于密码错误和/或钱包不在管理器中。
 
 ## `HASHER_LOCKED`
 
-The hashing algorithm is currently locked, any subsequent attempts to register a new implementation will throw this error.
-The purpose of the lock function is to provide a way to ensure that the implementation of the specific hashing algorithm cannot be changed once it is locked. This can be useful in scenarios where you want to guarantee the integrity and consistency of the hashing function throughout your application.
+哈希算法当前已锁定，任何后续尝试注册新实现都会抛出此错误。
+锁定函数的目的是提供一种确保特定哈希算法的实现一旦被锁定就不能更改的方法。在您的应用程序中保证哈希函数的完整性和一致性时，这可能是有用的。

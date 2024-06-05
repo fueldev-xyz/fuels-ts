@@ -1,49 +1,50 @@
-# Querying the Chain
+# 查询链
 
-Once you have set up a provider, you're ready to interact with the Fuel blockchain.
+一旦您设置了提供者，就可以与 Fuel 区块链进行交互了。
 
-We can connect to either a _*local*_ or an _*external*_ node:
+我们可以连接到 _*本地*_ 或 _*外部*_ 节点：
 
-> 1. _Running a [local node](../getting-started/connecting-to-a-local-node.md)_
-> 1. _Connecting to an [external node](../getting-started/connecting-to-testnet.md)_
+> 1. _运行[本地节点](../getting-started/connecting-to-a-local-node.md)_
+> 2. _连接到[外部节点](../getting-started/connecting-to-testnet.md)_
 
-Let's look at a few examples below.
+让我们来看一些示例。
 
-## Get the Base Asset ID
+## 获取基础资产ID
 
-The base asset is the underlying asset used to perform any transaction on a chain. This should be fetched from a provider to then be used in transactions.
+基础资产是用于在链上执行任何交易的基础资产。应该从提供者中获取，然后在交易中使用。
 
 <<< @/../../docs-snippets/src/guide/provider/provider.test.ts#provider-getBaseAssetId{ts:line-numbers}
 
-## Get all coins from an address
+## 从地址获取所有硬币
 
-This method returns all coins (of an optional given asset ID) from a wallet, including spent ones.
+此方法返回钱包中的所有硬币（可选给定资产ID），包括已花费的硬币。
 
 <<< @/../../docs-snippets/src/guide/provider/querying-the-chain.test.ts#wallet-query{ts:line-numbers}
 
-## Get spendable resources from an address
+## 从地址获取可花费的资源
 
-The last argument says how much you want to spend. This method returns only spendable, i.e., unspent coins (of a given asset ID). If you ask for more spendable than the amount of unspent coins you have, it returns an error.
+最后一个参数表示您想要花费多少。此方法仅返回可花费的、即未花费的硬币（给定资产ID）。如果您要求可花费的金额大于您拥有的未花费硬币的金额，则会返回错误。
 
 <<< @/../../docs-snippets/src/guide/provider/querying-the-chain.test.ts#wallet-get-spendable-resources{ts:line-numbers}
 
-## Get balances from an address
+## 从地址获取余额
 
-Get all the spendable balances of all assets for an address. This is different from getting the coins because we only return the numbers (the sum of UTXOs coins amount for each asset id) and not the UTXOs coins themselves.
+获取地址的所有可花费资产的余额。这与获取硬币不同，因为我们只返回数字（每个资产ID的UTXO硬币金额总和），而不返回UTXO硬币本身。
 
 <<< @/../../docs-snippets/src/guide/provider/querying-the-chain.test.ts#wallet-get-balances{ts:line-numbers}
 
-## Get blocks
+## 获取区块
 
-This method returns all the blocks from the blockchain that match the given query. The below code snippet shows how to get the last 10 blocks.
+此方法返回与给定查询匹配的区块链上的所有块。下面的代码片段显示如何获取最后 10 个块。
 
 <<< @/../../docs-snippets/src/guide/provider/querying-the-chain.test.ts#Provider-get-blocks{ts:line-numbers}
 
-## Get a message by its nonce
+## 通过其 nonce 获取消息
 
-You can use the `getMessageByNonce` method to retrieve a message by its nonce.
+您可以使用 `getMessageByNonce` 方法通过其 nonce 检索消息。
 
 <<< @/../../docs-snippets/src/guide/provider/querying-the-chain.test.ts#getMessageByNonce{ts:line-numbers}
+
 
 <!-- TODO: fix these examples to not reference hardcoded values after #1356 which introduces message generation tools
 ### Get messages

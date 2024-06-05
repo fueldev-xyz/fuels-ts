@@ -5,16 +5,16 @@
 
 # Fuels CLI
 
-The quickest way to build full stack Fuel dApps.
+构建全栈 Fuel dApps 的最快方式。
 
-- [`fuels init`](./commands.md#fuels-init) — Creates a new `fuels.config.ts` file
-- [`fuels build`](./commands.md#fuels-build) — Build `forc` workspace and generate Typescript types for everything
-- [`fuels deploy`](./commands.md#fuels-deploy) — Deploy workspace contracts and save their IDs to JSON file
-- [`fuels dev`](./commands.md#fuels-dev) — Start local Fuel Core _node_ and `build` + `deploy` on every file change
+- [`fuels init`](./commands.md#fuels-init) — 创建新的 `fuels.config.ts` 文件
+- [`fuels build`](./commands.md#fuels-build) — 构建 `forc` workspace 并为所有内容生成 Typescript 类型
+- [`fuels deploy`](./commands.md#fuels-deploy) — 部署 workspace 合约并将它们的 ID 保存到 JSON 文件中
+- [`fuels dev`](./commands.md#fuels-dev) — 在每次文件更改时启动本地 Fuel Core _节点_ 并执行 `build` + `deploy`
 
-## Getting started
+## 入门指南
 
-Imagine you have this file structure:
+假设您有以下文件结构：
 
 ```sh
 my-fuel-dapp # NextJS app or similar
@@ -31,18 +31,18 @@ my-fuel-dapp # NextJS app or similar
 └── package.json
 ```
 
-## Prerequisites
+## 先决条件
 
-The [Fuel Toolchain](https://docs.fueldev.xyz/docs/sway/introduction/fuel_toolchain/#the-fuel-toolchain) and its components (namely `forc` and `fuel-core`) are pre-requisite for several operations with the Fuels CLI. For example:
+[Fuel 工具链](https://docs.fueldev.xyz/docs/sway/introduction/fuel_toolchain/#the-fuel-toolchain) 及其组件（主要是 `forc` 和 `fuel-core`）是使用 Fuels CLI 进行几个操作的先决条件。例如：
 
-- Building out contracts using [`fuels build`](./commands.md#fuels-build) requires `forc`.
-- Deploying contracts locally using [`fuels deploy`](./commands.md#fuels-deploy) requires `fuel-core`.
+- 使用 [`fuels build`](./commands.md#fuels-build) 构建合约需要 `forc`。
+- 使用 [`fuels deploy`](./commands.md#fuels-deploy) 在本地部署合约需要 `fuel-core`。
 
-Follow the [installation guide](https://docs.fueldev.xyz/guides/installation/) if you don't have them installed already.
+如果您尚未安装它们，请按照 [安装指南](https://docs.fueldev.xyz/guides/installation/) 进行操作。
 
-## Installation
+## 安装
 
-Add it to your `my-fuel-dapp` project:
+将其添加到您的 `my-fuel-dapp` 项目中：
 
 ::: code-group
 
@@ -56,12 +56,12 @@ pnpm add fuels@{{fuels}}
 
 :::
 
-## Double-checking
+## 再次检查
 
 ```console-vue
 npx fuels@{{fuels}} -v
 ```
 
-## Next Step
+## 下一步
 
-Use [`pnpm fuels init`](./commands.md#fuels-init) to create a [`fuel.config.ts`](./config-file.md) file.
+使用 [`pnpm fuels init`](./commands.md#fuels-init) 创建 [`fuel.config.ts`](./config-file.md) 文件。

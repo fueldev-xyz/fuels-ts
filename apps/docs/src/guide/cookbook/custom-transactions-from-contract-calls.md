@@ -1,7 +1,7 @@
-# Custom Transactions From Contract Calls
+# 通过合约调用创建自定义交易
 
-In the previous example we demonstrated how you can instantiate a [`ScriptTransactionRequest`](../../api/Account/ScriptTransactionRequest.md) to customize and build out a more complex transaction via a script. The same can be done using contracts, but this allows us to utilize functions available in the contract and access on-chain state. Allowing us to harness all of the power from an invocation scope and a transaction request.
+在上一个示例中，我们演示了如何实例化一个 [`ScriptTransactionRequest`](../../api/Account/ScriptTransactionRequest.md) 来通过脚本定制并构建一个更复杂的交易。同样的方法也适用于合约，但这样做可以利用合约中可用的函数并访问链上状态。这样我们就可以利用调用作用域和交易请求的全部功能。
 
-This cookbook demonstrates how we can utilize a contract call to build out a custom transaction, allowing us to update on-chain state and transfer assets to a recipient address.
+这个示例演示了如何利用合约调用来构建自定义交易，允许我们更新链上状态并将资产转移到接收地址。
 
 <<< @/../../docs-snippets/src/guide/cookbook/custom-transactions-contract-calls.test.ts#custom-transactions-contract-calls{ts:line-numbers}

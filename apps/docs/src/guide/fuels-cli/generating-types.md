@@ -3,19 +3,19 @@
   const { fuels } = data
 </script>
 
-# Generating Types from ABI
+# 从 ABI 生成类型
 
-## Installation
+## 安装
 
-First we install `fuels` to our project:
+首先，我们将 `fuels` 安装到我们的项目中：
 
 ```console-vue
 pnpm add fuels@{{fuels}}
 ```
 
-## Help
+## 帮助
 
-A first glance at the docs:
+首先浏览文档：
 
 ```console
 $ pnpm fuels typegen -h
@@ -34,9 +34,9 @@ Options:
   -h, --help                   Display help
 ```
 
-## Generating Types for Contracts
+## 生成合约类型
 
-You can generate types for a Sway contract using the command below:
+您可以使用以下命令为 Sway 合约生成类型：
 
 <!-- This section should have the command to generate types for a Sway contract -->
 <!-- gen_types:example:start -->
@@ -50,25 +50,25 @@ pnpm fuels typegen -i ./abis/*-abi.json -o ./types
 <!-- This section should explain the flags used in the typegen command -->
 <!-- flags:example:start -->
 
-The path after the input flag `-i` should point to the file ending in `-abi.json` produced when the contract was built.
+输入标志 `-i` 后面的路径应指向在构建合约时生成的以 `-abi.json` 结尾的文件。
 
-The path after the output flag `-o` will be the the output directory for the generated types.
+输出标志 `-o` 后面的路径将是生成类型的输出目录。
 
-You can omit the `--contract` option here since it's the default.
+您可以在此处省略 `--contract` 选项，因为它是默认值。
 
 <!-- flags:example:end -->
 
-## Generating Types for Scripts
+## 生成脚本类型
 
-To generate types for a Sway script, use the `--script` flag:
+要为 Sway 脚本生成类型，请使用 `--script` 标志：
 
 ```console
 pnpm fuels typegen -i ./abis/*-abi.json -o ./types --script
 ```
 
-## Generating Types for Predicates
+## 生成断言类型
 
-To generate types for a Sway predicate, use the `--predicate` flag:
+要为 Sway 断言生成类型，请使用 `--predicate` 标志：
 
 ```console
 pnpm fuels typegen -i ./abis/*-abi.json -o ./types --predicate
@@ -76,8 +76,8 @@ pnpm fuels typegen -i ./abis/*-abi.json -o ./types --predicate
 
 ---
 
-See also:
+另请参阅：
 
-- [Using Generated Contract Types](./using-generated-types.md#contract)
-- [Using Generated Script Types](./using-generated-types.md#script)
-- [Using Generated Predicate Types](./using-generated-types.md#predicate)
+- [使用生成的合约类型](./using-generated-types.md#contract)
+- [使用生成的脚本类型](./using-generated-types.md#script)
+- [使用生成的断言类型](./using-generated-types.md#predicate)

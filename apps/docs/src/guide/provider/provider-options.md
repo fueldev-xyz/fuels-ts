@@ -1,41 +1,41 @@
-# Provider Options
+# 提供者选项
 
-You can provide various [options](../../api/Account/index.md#provideroptions) on `Provider` instantiation to modify its behavior.
+您可以在 `Provider` 实例化时提供各种[选项](../../api/Account/index.md#provideroptions)来修改其行为。
 
 ### `retryOptions`
 
-Calls to a fuel node via the `Provider` will fail if a connection cannot be established.
-Specifying retry options allows you to customize the way you want to handle that failure scenario before ultimately throwing an error.
+通过 `Provider` 对燃料节点的调用如果无法建立连接，则会失败。
+指定重试选项允许您在最终抛出错误之前自定义处理该失败场景的方式。
 
-_NOTE: retrying is only done when a connection cannot be established. If the connection is established and the node throws an error, no retry will happen._
+_注意：仅在无法建立连接时才会重试。如果已建立连接并且节点抛出错误，则不会进行重试。_
 
-You can provide the following settings:
+您可以提供以下设置：
 
-- `maxRetries` - Amount of attempts to retry after initial attempt before failing the call.
-- `backoff` - Strategy used to define the intervals between attempts.
-  - `exponential` _(default)_: Doubles the delay with each attempt.
-  - `linear` - Increases the delay linearly with each attempt.
-  - `fixed`: Uses a constant delay between attempts.
-- `baseDelay` _(default 150ms)_ - Base time in milliseconds for the backoff strategy.
+- `maxRetries` - 在初始尝试失败后重新尝试的次数。
+- `backoff` - 用于定义尝试之间间隔的策略。
+  - `exponential` （默认）：每次尝试时将延迟加倍。
+  - `linear` - 每次尝试时以线性方式增加延迟。
+  - `fixed`：使用恒定的延迟时间间隔。
+- `baseDelay` （默认为 150ms） - 用于 backoff 策略的基本时间，单位为毫秒。
 
 <<< @/../../docs-snippets/src/guide/provider/provider.test.ts#options-retryOptions{ts:line-numbers}
 
 ### `requestMiddleware`
 
-Allows you to modify the request object to add additional headers, modify the request's body, and much more.
+允许您修改请求对象以添加额外的标头、修改请求体等。
 
 <<< @/../../docs-snippets/src/guide/provider/provider.test.ts#options-requestMiddleware{ts:line-numbers}
 
 ### `timeout`
 
-Specify the timeout in milliseconds after which every request will be aborted.
+指定每个请求的超时时间（毫秒）。
 
 <<< @/../../docs-snippets/src/guide/provider/provider.test.ts#options-timeout{ts:line-numbers}
 
 ### `fetch`
 
-Provide a custom `fetch` function that'll replace the default fetch call.
+提供一个自定义的 `fetch` 函数，它将替换默认的 fetch 调用。
 
-_Note: If defined, `requestMiddleware`, `timeout` and `retryOptions` are applied to this custom `fetch` function as well._
+_注意：如果定义了 `fetch`，则 `requestMiddleware`、`timeout` 和 `retryOptions` 也会应用于此自定义的 `fetch` 函数。_
 
 <<< @/../../docs-snippets/src/guide/provider/provider.test.ts#options-fetch{ts:line-numbers}

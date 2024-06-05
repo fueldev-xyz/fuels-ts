@@ -1,17 +1,17 @@
-# GraphQL Integration
+# GraphQL 集成
 
-The Fuel Network provides a [GraphQL API](https://docs.fueldev.xyz/docs/graphql/overview/) to query the blockchain. To get a better understanding of the underlying schema and other operations, you can visit the [playground](https://devnet.fuel.network/v1/playground) for an interactive deep dive.
+Fuel 网络提供了 [GraphQL API](https://docs.fueldev.xyz/docs/graphql/overview/) 用于查询区块链。要更好地了解底层模式和其他操作，您可以访问 [playground](https://devnet.fuel.network/v1/playground) 进行交互式深入探讨。
 
-## Operations
+## 操作
 
-For its own purposes, the SDK creates custom operations based off of the API's schema and auto-generates TypeScript client code via codegen tools.
-The end result of this code generation are the operations available on the [`Provider`](../provider/index.md), of which some are shown below:
+为了满足自身的需求，SDK 基于 API 的模式创建自定义操作，并通过代码生成工具自动生成 TypeScript 客户端代码。
+该代码生成的最终结果是 [`Provider`](../provider/index.md) 上可用的操作，以下是其中的一些示例：
 
 <<< @/../../docs-snippets/src/guide/provider/provider.test.ts#operations{ts:line-numbers}
 
-Note that these operations primarily serve the needs of the SDK and the `Provider`'s methods which can encapsulate calls to multiple operations, parse the responses, etc.
+请注意，这些操作主要用于满足 SDK 和 `Provider` 方法的需求，它们可以封装对多个操作的调用、解析响应等。
 
-If your querying needs exceed what the `Provider` provides, we suggest you follow this same process and write your own custom query operations, e.g.:
+如果您的查询需求超出了 `Provider` 提供的范围，我们建议您按照同样的流程编写自己的自定义查询操作，例如：
 
 ```gql
 query getChain {
@@ -23,6 +23,6 @@ query getChain {
 }
 ```
 
-### Mutations and subscriptions
+### 变更和订阅
 
-For mutations and subscriptions, we strongly suggest that you communicate with the node via the `Provider` and do not write your own custom GraphQL operations because, in its methods, the `Provider` does additional processing before and after sending them to the node which might require detailed knowledge of various Fuel domain-specific topics.
+对于变更和订阅，我们强烈建议您通过 `Provider` 与节点通信，而不是编写自己的自定义 GraphQL 操作，因为在其方法中，`Provider` 在将它们发送到节点之前和之后进行了额外的处理，这可能需要对各种 Fuel 领域特定主题有详细的了解。

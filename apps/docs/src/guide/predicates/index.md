@@ -5,28 +5,28 @@
   const debugUrl = `https://docs.fueldev.xyz/docs/sway/sway-program-types/predicates/#debugging-predicates`
 </script>
 
-# Predicates
+# 断言
 
-Predicates in Sway are specific types of programs that return a boolean value, meaning they function like rules that a transaction must follow to be valid.
+Sway 中的断言是一种特定类型的程序，返回布尔值，意味着它们的功能类似于交易必须遵循的规则。
 
-They don't have access to the information written on the blockchain – they make decisions based solely on the received parameters.
+它们无法访问区块链上写入的信息 - 它们仅基于接收到的参数进行决策。
 
-These predicates are pure functions, which means they don't cause any unintended side effects.
+这些断言是纯函数，这意味着它们不会引起任何意外的副作用。
 
-The key difference here is that instead of checking these rules directly on the blockchain, we check them 'off' the blockchain first. Once we're confident they're valid, we then record the transaction on the blockchain.
+这里的关键区别在于，我们首先在区块链之外检查这些规则，而不是直接在区块链上检查。一旦我们确信它们是有效的，我们就会将交易记录在区块链上。
 
-This method is not only more efficient but also helps to prevent traffic jams on the network and makes transactions cheaper. It does so by reducing the need for repetitive calculations on the blockchain.
+这种方法不仅更高效，而且有助于防止网络拥堵，并降低交易成本。它通过减少在区块链上重复计算的需要来实现这一点。
 
-## Working with Predicates
+## 使用断言
 
-Users can send assets to the predicate address as they would to any other address on the blockchain. To spend funds stored at the predicate address, users must provide the original byte code of the predicate and, if required, the predicate data.
+用户可以将资产发送到断言地址，就像将资产发送到区块链上的任何其他地址一样。要花费存储在断言地址的资金，用户必须提供断言的原始字节码，如果需要，还要提供断言数据。
 
-The predicate data relates to the parameters received by the predicate's `main` function. This data comes into play during the byte code's execution. If the `main` function does not have any parameters then there is no data to be provided, therefore we do not provide the predicate data.
+断言数据与断言的 `main` 函数接收的参数相关。这些数据在字节码执行期间起作用。如果 `main` 函数没有任何参数，则不需要提供数据，因此我们不提供断言数据。
 
-If the predicate is validated successfully, the funds will be accessible. Otherwise, the SDK will throw a validation error.
+如果断言成功验证，则可以访问资金。否则，SDK 将抛出验证错误。
 
-In the next section, we provide a step-by-step guide on how to interact with a predicate to validate your transactions.
+在下一节中，我们将提供一个逐步指南，介绍如何与断言交互以验证您的交易。
 
-## Debugging Predicates
+## 调试断言
 
-Currently there is no way to <a :href="debugUrl" target="_blank" rel="noreferrer">debug a predicate</a> yet. In the meantime, a practical workaround is to initially write, test, and debug your predicate as a script, which has more debugging tools available. Once it's working as expected, you can then convert it back into a predicate.
+目前还没有办法<a :href="debugUrl" target="_blank" rel="noreferrer">调试断言</a>。在此期间，一个实用的解决方法是最初将断言编写、测试和调试为脚本，脚本具有更多的调试工具可用。一旦它按预期工作，您可以将其转换回断言。

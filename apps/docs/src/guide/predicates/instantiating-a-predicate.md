@@ -1,37 +1,37 @@
-# Instantiating predicates
+# 实例化断言
 
-A predicate in Sway can be as simple as the following:
+在 Sway 中，断言可以像下面这样简单：
 
 <<< @/../../docs-snippets/test/fixtures/forc-projects/return-true-predicate/src/main.sw#predicate-index-1{rust:line-numbers}
 
-In this minimal example, the `main` function does not accept any parameters and simply returns true.
+在这个最简示例中，`main` 函数不接受任何参数，只是简单地返回 true。
 
-Just like contracts in Sway, once you've created a predicate, you can compile it using `forc build`. For more information on working with Sway, refer to the <a :href="introUrl" target="_blank" rel="noreferrer">Sway documentation</a>.
+就像 Sway 中的合约一样，一旦您创建了一个断言，您可以使用 `forc build` 编译它。有关使用 Sway 的更多信息，请参阅 <a :href="introUrl" target="_blank" rel="noreferrer">Sway 文档</a>。
 
-After compiling, you will obtain the binary of the predicate and its JSON ABI (Application Binary Interface). Using these, you can instantiate a predicate in TypeScript as shown in the code snippet below:
+编译后，您将获得断言的二进制文件和其 JSON ABI（应用程序二进制接口）。使用这些，您可以像下面的代码片段一样在 TypeScript 中实例化一个断言：
 
 <<< @/../../docs-snippets/src/guide/predicates/index.test.ts#predicate-index-2{ts:line-numbers}
 
-The created [`Predicate`](../../api/Account/Predicate.md) instance, among other things, has three important properties: the predicate `bytes` (byte code), the `chainId`, and the predicate `address`.
+创建的 [`Predicate`](../../api/Account/Predicate.md) 实例，除其他外，有三个重要属性：断言 `bytes`（字节码）、`chainId` 和断言 `address`。
 
-This address, generated from the byte code, corresponds to the Pay-to-Script-Hash (P2SH) address used in Bitcoin.
+这个地址，由字节码生成，对应于比特币中使用的 Pay-to-Script-Hash（P2SH）地址。
 
-## Predicate with multiple arguments
+## 带有多个参数的断言
 
-You can pass more than one argument to a predicate. For example, this is a predicate that evaluates to `true` if the two arguments are not equal:
+您可以将多个参数传递给一个断言。例如，下面是一个断言，如果两个参数不相等，则评估为 `true`：
 
 <<< @/../../../packages/fuel-gauge/test/fixtures/forc-projects/predicate-multi-args/src/main.sw#predicate-multi-args-sw{rust:line-numbers}
 
-You can pass the two arguments to this predicate like this:
+您可以像这样将两个参数传递给这个断言：
 
 <<< @/../../../packages/fuel-gauge/src/predicate/predicate-arguments.test.ts#predicate-multi-args{ts:line-numbers}
 
-## Predicate with a Struct argument
+## 带有结构参数的断言
 
-You can also pass a struct as an argument to a predicate. This is one such predicate that expects a struct as an argument:
+您也可以将结构作为参数传递给断言。以下是一个期望结构作为参数的断言示例：
 
 <<< @/../../../packages/fuel-gauge/test/fixtures/forc-projects/predicate-main-args-struct/src/main.sw#Predicate-main-args{rust:line-numbers}
 
-You can pass a struct as an argument to this predicate like this:
+您可以像这样将结构作为参数传递给这个断言：
 
 <<< @/../../../packages/fuel-gauge/src/predicate/predicate-arguments.test.ts#predicate-struct-arg{ts:line-numbers}

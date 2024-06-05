@@ -3,15 +3,15 @@
   const { fuels } = data
 </script>
 
-# Creating a Fuel dApp
+# 创建 Fuel dApp
 
-`npm create fuels` is a command line tool that helps you scaffold a new full-stack Fuel dApp. In this guide, we will create a new counter dApp using `npm create fuels` and add decrement functionality to it. The final result will look like this:
+`npm create fuels` 是一个命令行工具，可帮助您搭建新的全栈 Fuel dApp。在本指南中，我们将使用 `npm create fuels` 创建一个新的计数器 dApp，并为其添加递减功能。最终结果将如下所示：
 
-![End result of this guide](../../public/creating-a-fuel-dapp-create-fuels-end-result.png)
+![此指南的最终结果](../../public/creating-a-fuel-dapp-create-fuels-end-result.png)
 
-## Initializing the project
+## 初始化项目
 
-The first step is to run the command:
+首先要做的是运行以下命令：
 
 ::: code-group
 
@@ -25,41 +25,41 @@ pnpm create fuels@{{fuels}}
 
 :::
 
-Once you run the command, you will be greeted with a few simple questions. We will answer them as follows:
+一旦运行命令，您将会看到一些简单的问题。我们将按以下方式回答：
 
 ```md
-◇ What is the name of your project?
+◇ 您的项目名称是什么？
 │ my-fuel-project
 │
-◇ Select a package manager:
+◇ 选择一个包管理器：
 │ pnpm
 │
-◆ Which Sway programs do you want? (space to toggle)
-│ ● Contract
-│ ○ Predicate
-│ ○ Script
+◆ 您想要哪些 Sway 程序？（切换空格）
+│ ● 合约
+│ ○ 断言
+│ ○ 脚本
 └
 ```
 
-The tool will scaffold the project and install the necessary dependencies for you. You will then be greeted with this message:
+该工具将为您搭建项目并安装必要的依赖项。然后，您将看到以下消息：
 
 ```md
-⚡️ Success! Created a fullstack Fuel dapp at my-fuel-project
+⚡️ 成功！已在 my-fuel-project 中创建了一个全栈 Fuel dapp
 
-To get started:
+要开始使用：
 
-- cd into the project directory: cd my-fuel-project
-- Start a local Fuel dev server: pnpm fuels:dev
-- Run the frontend: pnpm dev
+- 进入项目目录：cd my-fuel-project
+- 启动本地 Fuel 开发服务器：pnpm fuels:dev
+- 运行前端：pnpm dev
 
--> TS SDK docs: https://docs.fueldev.xyz/docs/fuels-ts/
--> Sway docs: https://docs.fueldev.xyz/docs/sway/
--> If you have any questions, check the Fuel forum: https://forum.fuel.network/
+-> TS SDK 文档：https://docs.fueldev.xyz/docs/fuels-ts/
+-> Sway 文档：https://docs.fueldev.xyz/docs/sway/
+-> 如果您有任何问题，请查看 Fuel 论坛：https://forum.fuel.network/
 ```
 
-## Directory Structure
+## 目录结构
 
-The project scaffolded by `npm create fuels` has roughly the following directory structure:
+由 `npm create fuels` 搭建的项目大致具有以下目录结构：
 
 ```md
 my-fuel-project
@@ -85,25 +85,25 @@ my-fuel-project
 └── ...
 ```
 
-It is a Next.js project with a few extra files and folders. Let's take a closer look at some of the important ones:
+这是一个 Next.js 项目，带有一些额外的文件和文件夹。让我们更详细地查看一些重要的文件：
 
 ### `./fuels.config.ts`
 
-This is the configuration file for the [`fuels` CLI](../fuels-cli/index.md), the CLI and tooling that powers this project under the hood. It makes sure that all of your Sway programs are continuously compiled and deployed to your local Fuel node. You can read more about the `fuels.config.ts` file in the [Fuels CLI documentation](../fuels-cli/config-file.md).
+这是 [`fuels` CLI](../fuels-cli/index.md) 的配置文件，该 CLI 和工具为项目提供支持。它确保所有的 Sway 程序都持续编译并部署到您的本地 Fuel 节点。您可以在 [Fuels CLI 文档](../fuels-cli/config-file.md) 中了解有关 `fuels.config.ts` 文件的更多信息。
 
 ### `./sway-programs/contract/src/main.sw`
 
-This is where our Sway contract lives. Out of the box, it is a simple counter contract that can only be incremented. We will add a decrement functionality to it in the next step.
+这是我们的 Sway 合约所在的位置。默认情况下，它是一个简单的计数器合约，只能递增。我们将在下一步中为其添加递减功能。
 
 ### `./src/pages/index.tsx`
 
-This file contains the source code for the frontend of our dApp. It is a Next.js page that renders the counter value and allows the user to increment the counter.
+该文件包含我们的 dApp 前端的源代码。它是一个 Next.js 页面，用于呈现计数器值，并允许用户递增计数器。
 
-### Dev Environment Setup
+### 开发环境设置
 
-Now that we have our project scaffolded, let's set up our development environment.
+现在我们已经搭建了项目，让我们设置开发环境。
 
-Let's first start our Fuel Dev server. This will start a local Fuel node and continuously compile and deploy our Sway programs to it.
+首先启动我们的 Fuel Dev 服务器。这将启动一个本地 Fuel 节点，并持续编译和部署我们的 Sway 程序。
 
 ::: code-group
 
@@ -117,7 +117,7 @@ pnpm fuels:dev
 
 :::
 
-Once the server is up and running, we can start our Next.js development server in another terminal.
+一旦服务器启动，我们可以在另一个终端中启动我们的 Next.js 开发服务器。
 
 ::: code-group
 
@@ -131,62 +131,63 @@ pnpm dev
 
 :::
 
-You should now be able to see the counter dApp running at `http://localhost:3000`. You can try changing the contents of the `./sway-programs/contract/src/main.sw` file and see the changes reflected in the UI without having to restart the server.
+现在，您应该能够在 `http://localhost:3000` 看到计数器 dApp 正在运行。您可以尝试更改 `./sway-programs/contract/src/main.sw` 文件的内容，并在不重新启动服务器的情况下看到 UI 中的更改。
 
-![Fullstack Fuel Dev Workflow](../../public/creating-a-fuel-dapp-create-fuels-split-view.png)
+![全栈 Fuel Dev 工作流程](../../public/creating-a-fuel-dapp-create-fuels-split-view.png)
 
-## Adding Decrement Functionality
+## 添加递减功能
 
-To add decrement functionality to our counter, we will have to do two things: 1. Add a `decrement_counter` function to our Sway contract, and 2. Modify the `./src/pages/index.tsx` file to add a button that calls this function.
+为了向我们的计数器添加递减功能，我们需要做两件事：1. 在我们的 Sway 合约中添加一个 `decrement_counter` 函数，2. 修改 `./src/pages/index.tsx` 文件以添加一个调用此函数的按钮。
 
-### 1. Modifying the Sway Contract
+### 1. 修改 Sway 合约
 
-To add a `decrement_counter` function to our Sway contract, we will modify the `./sway-programs/contract/src/main.sw` file.
+要向我们的 Sway 合约添加一个 `decrement_counter` 函数，我们将修改 `./sway-programs/contract/src/main.sw` 文件。
 
-There are two steps when adding a new function to a Sway program. The first step is to specify the function's ABI.
+添加新函数到 Sway 程序时有两个步骤。第一步是指定函数的 ABI。
 
-Towards the top of the file, you will find the ABI section for the contract. Let's add a new function to it:
+在文件顶部，您将找到合约的 ABI 部分。让我们向其中添加一个新函数：
 
 <<< @/../../create-fuels-counter-guide/sway-programs/contract/src/main.sw#create-fuels-counter-guide-abi{rust:line-numbers}
 
-The second step is to implement the function.
+第二步是实现函数。
 
-We will add the implementation of the `decrement_counter` function right below the `increment_counter` function.
+我们将在 `increment_counter` 函数的下方添加 `decrement_counter` 函数的实现。
 
 <<< @/../../create-fuels-counter-guide/sway-programs/contract/src/main.sw#create-fuels-counter-guide-impl{rust:line-numbers}
 
-### 2. Modifying the Frontend
 
-We will now add a new button to the frontend that will call the `decrement_counter` function when clicked. To do this, we will modify the `./src/pages/index.tsx` file.
+### 2. 修改前端
 
-First, we will add a function called `onDecrementPressed` similar to the `onIncrementPressed` function:
+我们现在将在前端添加一个新按钮，当点击时将调用 `decrement_counter` 函数。为此，我们将修改 `./src/pages/index.tsx` 文件。
+
+首先，我们将添加一个名为 `onDecrementPressed` 的函数，类似于 `onIncrementPressed` 函数：
 
 <<< @/../../create-fuels-counter-guide/src/pages/index.tsx#create-fuels-counter-guide-on-decrement-react-function{ts:line-numbers}
 
-Second, we will add a new button to the UI that will call the `onDecrementPressed` function when clicked:
+其次，我们将在界面上添加一个新的按钮，当点击时将调用 `onDecrementPressed` 函数：
 
-<!-- TODO: our docs engine currently does not detect comments in JSX -->
+<!-- TODO：我们的文档引擎当前无法检测 JSX 中的注释 -->
 
 ```tsx
 <Button onClick={onDecrementPressed} className="mt-6">
-  Decrement Counter
+  减少计数器
 </Button>
 ```
 
-Congratulations! That's all. You should now be able to see the counter dApp running at `http://localhost:3000` with our newly added decrement functionality.
+恭喜！这就是全部。您现在应该能够在 `http://localhost:3000` 上看到计数器 dApp 运行，并且具有我们新添加的减少功能。
 
-You can find the complete source code of the dApp we built [here](https://github.com/FuelLabs/fuels-ts/tree/master/apps/create-fuels-counter-guide).
+您可以在[这里](https://github.com/FuelLabs/fuels-ts/tree/master/apps/create-fuels-counter-guide)找到我们构建的完整 dApp 的源代码。
 
-![End result of this guide](../../public/creating-a-fuel-dapp-create-fuels-end-result.png)
+![此指南的最终结果](../../public/creating-a-fuel-dapp-create-fuels-end-result.png)
 
-Whenever you want to add a new feature to your dApp and quickly prototype things, you can follow the same steps we followed in this guide.
+每当您想要为您的 dApp 添加新功能并快速原型设计时，您可以按照本指南中的相同步骤操作。
 
-## Next Steps
+## 下一步
 
-- Now that you have a basic counter dApp running and have the `npm create fuels` workflow powering you, you can start building more complex dApps using the Fuel Stack. A good place to start for ideas and reference code is the [Sway Applications Repo](https://github.com/FuelLabs/sway-applications).
+- 现在您已经有了一个基本的计数器 dApp，并且拥有 `npm create fuels` 工作流支持，您可以开始使用 Fuel Stack 构建更复杂的 dApps。一个好的起点是 [Sway Applications Repo](https://github.com/FuelLabs/sway-applications)，那里有关于想法和参考代码的好地方。
 
-- If you want to deploy your dApp to the testnet, check out our [Deploying a dApp to Testnet](./deploying-a-dapp-to-testnet.md) guide.
+- 如果您想要将您的 dApp 部署到测试网，请查看我们的[将 dApp 部署到测试网](./deploying-a-dapp-to-testnet.md)指南。
 
-- If you have any questions or need help, feel free to reach out to us on the [Official Fuel Forum](https://forum.fuel.network/).
+- 如果您有任何问题或需要帮助，请随时在[官方 Fuel 论坛](https://forum.fuel.network/)上联系我们。
 
-- If you want to learn more about the Fuel Stack, check out the [Fuel Docs](https://docs.fueldev.xyz/).
+- 如果您想了解更多关于 Fuel Stack 的信息，请查阅 [Fuel 文档](https://docs.fueldev.xyz/)。

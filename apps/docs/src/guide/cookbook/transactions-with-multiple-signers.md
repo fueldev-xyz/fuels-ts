@@ -1,21 +1,21 @@
-# Transactions with Multiple Signers
+# 多签名者的交易
 
-When a transaction contains a spendable input such as a coin, it must also contain the signature of the coin owner for it to be spent. If the coin owner is also submitting the transaction, then this is straightforward. However, if an external address is required to sign the transaction, then the transaction must contain multiple signatures. Within the SDK, an account signature can be added to a transaction by calling `addAccountWitnesses` on the transaction request.
+当一个交易包含一个可花费的输入（例如一个硬币）时，它必须包含该硬币所有者的签名才能被花费。如果硬币所有者也提交了交易，那么这是直截了当的。但是，如果需要外部地址对交易进行签名，则交易必须包含多个签名。在 SDK 中，可以通过在交易请求上调用 `addAccountWitnesses` 来添加帐户签名到交易中。
 
-Consider a script that requires two signatures to be spent:
+考虑一个需要两个签名才能花费的脚本：
 
 <<< @/../../docs-snippets/test/fixtures/forc-projects/script-signing/src/main.sw#multiple-signers-1{rust:line-numbers}
 
-In the snippet above, we use the built-in Sway function `tx_witness_data()` to retrieve the witness signatures and `tx_id()` for the transaction hash. Then, we retrieve the signing address to validate the script.
+在上面的代码片段中，我们使用内置的 Sway 函数 `tx_witness_data()` 来检索见证签名和 `tx_id()` 来获取交易哈希。然后，我们检索签名地址以验证脚本。
 
-We would interact with this script in the SDK by creating a transaction request from an invocation scope. The same can be done for a contract. Consider the following script:
+我们可以通过从调用范围创建一个交易请求来在 SDK 中与此脚本进行交互。对于合约也是一样。考虑以下脚本：
 
 <<< @/../../docs-snippets/src/guide/cookbook/signing-transactions.test.ts#multiple-signers-2{ts:line-numbers}
 
-The same approach can be used for a predicate by instantiating it and adding it to a transaction request. Consider the following predicate:
+同样的方法也可以用于断言，通过实例化并将其添加到交易请求中。考虑以下断言：
 
 <<< @/../../docs-snippets/test/fixtures/forc-projects/predicate-signing/src/main.sw#multiple-signers-3{rust:line-numbers}
 
-We can interact with this predicate in the SDK with the following implementation:
+我们可以通过以下实现在 SDK 中与此断言进行交互：
 
 <<< @/../../docs-snippets/src/guide/cookbook/signing-transactions.test.ts#multiple-signers-4{ts:line-numbers}

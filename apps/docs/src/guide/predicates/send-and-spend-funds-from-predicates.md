@@ -1,67 +1,67 @@
-# Send And Spend Funds From Predicates
+# 从断言发送和花费资金
 
-Predicates can be used to validate transactions. This implies that a predicate can safeguard assets, only allowing their transfer if the predicate conditions are met.
+断言可以用于验证交易。这意味着断言可以保护资产，仅当断言条件满足时才允许它们的转移。
 
-This guide will demonstrate how to send and spend funds using a predicate.
+本指南将演示如何使用断言发送和花费资金。
 
-## Predicate Example
+## 断言示例
 
-Consider the following predicate:
+考虑以下断言：
 
 <<< @/../../docs-snippets/test/fixtures/forc-projects/simple-predicate/src/main.sw#send-and-spend-funds-from-predicates-1{rust:line-numbers}
 
-This predicate accepts an address of type `b256` and compares it with a hard-coded address of the same type. If both addresses are equal, the predicate returns true, otherwise it will return false.
+这个断言接受一个类型为 `b256` 的地址，并将其与相同类型的硬编码地址进行比较。如果两个地址相等，断言返回 true，否则返回 false。
 
-## Interacting with the Predicate Using SDK
+## 使用 SDK 与断言交互
 
-Let's use the above predicate to validate our transaction.
+让我们使用上面的断言来验证我们的交易。
 
-Once you've compiled the predicate (`forc build`), you'll obtain two important artifacts: the JSON ABI and the predicate's binary code. These are needed to instantiate a new predicate.
+一旦你编译了断言（`forc build`），你将获得两个重要的工件：JSON ABI 和断言的二进制代码。这些需要用来实例化一个新的断言。
 
-This is where we also pass in the predicate's data. Note that the `main` function in our predicate example requires a parameter called `input_address` of type `b256`. We will pass this parameter to the `Predicate` constructor along with the bytecode and the JSON ABI.
+在这里我们还要传入断言的数据。注意我们断言示例中的 `main` 函数需要一个名为 `input_address` 类型为 `b256` 的参数。我们将把这个参数传递给 `Predicate` 构造函数，同时传入字节码和 JSON ABI。
 
 <<< @/../../docs-snippets/src/guide/predicates/send-and-spend-funds-from-predicates.test.ts#send-and-spend-funds-from-predicates-2{ts:line-numbers}
 
-> Note: If you want to pass in the predicate data _after_ instantiating the `Predicate` or if you want to use a different data than the one passed in the constructor, you will have to create a new `Predicate` instance.
+> 注意：如果你想在实例化 `Predicate` 后传入断言数据，或者想使用与构造函数中传入的不同的数据，你将不得不创建一个新的 `Predicate` 实例。
 
-With the predicate instantiated, we can transfer funds to its address. This requires us to have a wallet with sufficient funds. If you're unsure about using wallets with the SDK, we recommend checking out our [wallet](../wallets/) guide.
+有了断言实例化后，我们可以将资金转移到它的地址。这要求我们有足够的资金的钱包。如果你对如何使用 SDK 中的钱包不确定，我们建议查阅我们的 [钱包](../wallets/) 指南。
 
 <<< @/../../docs-snippets/src/guide/predicates/send-and-spend-funds-from-predicates.test.ts#send-and-spend-funds-from-predicates-3{ts:line-numbers}
 
-Now that our predicate holds funds, we can use it to validate a transaction and hence execute our transfer. We can achieve that by doing the following:
+现在我们的断言持有资金，我们可以使用它来验证交易，从而执行我们的转账。我们可以通过以下方式实现：
 
 <<< @/../../docs-snippets/src/guide/predicates/send-and-spend-funds-from-predicates.test.ts#send-and-spend-funds-from-predicates-5{ts:line-numbers}
 
-Note the method transfer has two parameters: the recipient's address and the intended transfer amount.
+请注意，转移方法有两个参数：收件人的地址和拟转移的金额。
 
-Once the predicate resolves with a return value `true` based on its predefined condition, our predicate successfully spends its funds by means of a transfer to a desired wallet.
+一旦断言基于其预定义条件解析出一个返回值 `true`，我们的断言成功地通过转账将资金转移到目标钱包。
 
 ---
 
-In a similar approach, you can use the `createTransfer` method, which returns a [`ScriptTransactionRequest`](../../api/Account/ScriptTransactionRequest.md). Then, we can submit this transaction request by calling the `sendTransaction` method.
+在类似的方法中，你可以使用 `createTransfer` 方法，它返回一个 [`ScriptTransactionRequest`](../../api/Account/ScriptTransactionRequest.md)。然后，我们可以通过调用 `sendTransaction` 方法提交此交易请求。
 
-This can be useful if you need the transaction ID before actually submitting it to the node.
+如果你需要在实际提交到节点之前知道交易 ID，这可能会有用。
 
 <<< @/../../docs-snippets/src/guide/predicates/send-and-spend-funds-from-predicates.test.ts#send-and-spend-funds-from-predicates-8{ts:line-numbers}
 
-## Spending Entire Predicate Held Amount
+## 花费整个断言持有的金额
 
-Trying to forward the entire amount held by the predicate results in an error because no funds are left to cover the transaction fees. Attempting this will result in an error message like:
+试图转发断言持有的全部金额会导致错误，因为没有剩余资金来支付交易费用。尝试这样做会导致错误消息，如：
 
 <<< @/../../docs-snippets/src/guide/predicates/send-and-spend-funds-from-predicates.test.ts#send-and-spend-funds-from-predicates-6{ts:line-numbers}
 
-## Predicate Validation Failure
+## 断言验证失败
 
-What happens when a predicate fails to validate? Recall our predicate only validates if the `input_address` matches the hard-coded `valid_address`. Hence, if we set a different data from the `valid_address`, the predicate will fail to validate.
+当断言无法验证时会发生什么？回想一下，我们的断言只有在 `input_address` 匹配硬编码的 `valid_address` 时才会验证。因此，如果我们设置与 `valid_address` 不同的数据，断言将无法验证。
 
-When a predicate fails to validate, the SDK throws an error that starts like this:
+当断言无法验证时，SDK 抛出的错误如下所示：
 
 <<< @/../../docs-snippets/src/guide/predicates/send-and-spend-funds-from-predicates.test.ts#send-and-spend-funds-from-predicates-7{ts:line-numbers}
 
-## Pre-staging a Transaction
+## 预分配交易
 
-In some cases, you may want to pre-stage a predicate transaction before submitting it for execution. To do this, you can use the `createTransfer` method on the `Predicate` class.
+在某些情况下，您可能希望在提交执行之前预分配断言事务。为此，您可以在 `Predicate` 类上使用 `createTransfer` 方法。
 
-In the following example, we are pre-staging a transaction to be able to know the transaction ID without actually submitting the transaction.
+在以下示例中，我们正在预先配置一个交易，以便在实际提交交易之前知道交易 ID。
 
 <<< @/../../docs-snippets/src/guide/predicates/send-and-spend-funds-from-predicates.test.ts#predicates-prestage-transaction{ts:line-numbers}

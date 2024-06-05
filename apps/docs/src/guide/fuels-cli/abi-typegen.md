@@ -12,17 +12,15 @@
   `
 </script>
 
-# ABI Typegen
+# ABI 类型生成器
 
-## The JSON ABI file
+## JSON ABI 文件
 
-Whether you want to deploy or connect to a pre-existing smart contract, the <a :href="abiUrl" target="_blank" rel="noreferrer">JSON ABI</a> file is what makes it possible.
+无论您是要部署还是连接到预先存在的智能合约，<a :href="abiUrl" target="_blank" rel="noreferrer">JSON ABI</a> 文件都是实现这一目标的关键。
 
-It tells the SDK about the <a :href="abiUrl" target="_blank" rel="noreferrer">ABI methods</a> in your <a :href="contractsUrl" target="_blank" rel="noreferrer">Smart Contracts</a> and <a :href="scriptsUrl" target="_blank" rel="noreferrer">Scripts</a>
+它向 SDK 提供有关您的 <a :href="contractsUrl" target="_blank" rel="noreferrer">智能合约</a> 和 <a :href="scriptsUrl" target="_blank" rel="noreferrer">脚本</a> 中的 <a :href="abiUrl" target="_blank" rel="noreferrer">ABI 方法</a> 的信息。
 
-Given the following Sway smart contract:
-
-<!-- TODO: stop using hard-coded snippets -->
+给定以下 Sway 智能合约：
 
 ```rust:line-numbers
 contract;
@@ -38,7 +36,7 @@ impl MyContract for Contract {
 }
 ```
 
-The JSON ABI file would look something like this:
+JSON ABI 文件可能如下所示：
 
 ```json
 $ cat out/debug/my-test-abi.json
@@ -58,7 +56,8 @@ $ cat out/debug/my-test-abi.json
 ]
 ```
 
-See also:
+另请参阅：
 
-- [Generating Types](./generating-types.md)
-- [Using Generated Types](./using-generated-types.md)
+- [生成类型](./generating-types.md)
+- [使用生成的类型](./using-generated-types.md)
+

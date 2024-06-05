@@ -1,10 +1,10 @@
-# Wallet SDK and React Hooks
+# 钱包 SDK 和 React Hooks
 
-This guide will show you how you can use the [Fuel Wallet](https://wallet.fuel.network/) SDK and its [React Hooks](https://wallet.fuel.network/docs/dev/hooks-reference/) to build a simple React application that lets users connect their wallet to your application and see their balance.
+本指南将向您展示如何使用 [Fuel 钱包](https://wallet.fuel.network/) SDK 及其 [React Hooks](https://wallet.fuel.network/docs/dev/hooks-reference/) 构建一个简单的 React 应用程序，让用户将其钱包连接到您的应用程序并查看其余额。
 
-## Setup
+## 设置
 
-The first thing we will do is setup a Next.js project.
+首先，我们将设置一个 Next.js 项目。
 
 ::: code-group
 
@@ -18,7 +18,7 @@ pnpm create next-app my-fuel-app
 
 :::
 
-Next, we will install the Fuel Wallet React SDK and the Fuel TypeScript SDK.
+接下来，我们将安装 Fuel Wallet React SDK 和 Fuel TypeScript SDK。
 
 ::: code-group
 
@@ -32,29 +32,29 @@ pnpm add fuels @fuels/connectors @fuels/react @tanstack/react-query
 
 :::
 
-## The Provider
+## 提供者
 
-In order to make use of the React hooks provided by the Fuel Wallet SDK, we need to wrap our application in a `FuelProvider` component. This component will provide the hooks with the necessary context to interact with the Fuel Wallet SDK. Add the following to your `pages/_app.tsx` file:
+为了使用 Fuel Wallet SDK 提供的 React hooks，我们需要将我们的应用程序包装在 `FuelProvider` 组件中。该组件将为 hooks 提供必要的上下文，以与 Fuel Wallet SDK 进行交互。将以下内容添加到您的 `pages/_app.tsx` 文件中：
 
 <!-- prettier-ignore -->
 <<< @/../../demo-wallet-sdk-react/pages/_app.tsx#wallet-sdk-react-provider{tsx:line-numbers}
 
-## Building the UI
+## 构建 UI
 
-Go to your `pages/index.tsx` file and replace the contents with the following:
+转到您的 `pages/index.tsx` 文件，并将其内容替换为以下内容：
 
 <<< @/../../demo-wallet-sdk-react/pages/index.tsx#wallet-sdk-react-ui{tsx:line-numbers}
 
-Let's break down what's happening here.
+让我们分解一下这里发生了什么。
 
-The `useConnectors` hook returns a list of available wallet connectors.
+`useConnectors` hook 返回一个可用钱包连接器的列表。
 
-Once a connector has been selected by the user, the `useConnect` hook will return a `connect` function that can be used to connect the user's wallet to your application.
+一旦用户选择了连接器，`useConnect` hook 将返回一个 `connect` 函数，该函数可用于将用户的钱包连接到您的应用程序。
 
-The `useAccount` hook returns information about the user's account, if they are connected.
+`useAccount` hook 返回用户账户的信息（如果他们已连接）。
 
-The `useBalance` hook returns the user's ETH balance on the [`testnet` network](https://devnet.fuel.network/v1/playground), if they are connected.
+`useBalance` hook 返回用户的 ETH 余额（如果他们已连接）。
 
-## Further Reading
+## 进一步阅读
 
-- [Wallet SDK React Hooks Reference](https://wallet.fuel.network/docs/dev/hooks-reference/)
+- [钱包 SDK React Hooks 参考](https://wallet.fuel.network/docs/dev/hooks-reference/)

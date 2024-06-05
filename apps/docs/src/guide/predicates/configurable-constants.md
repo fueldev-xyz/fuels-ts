@@ -1,35 +1,35 @@
-# Predicate With Configurable Constants
+# 具有可配置常量的断言
 
-Predicates, much like [contracts](../contracts/configurable-constants.md) and [scripts](../scripts/configurable-constants.md), also supports configurable constants. This enables Predicates to suit specific use cases and enhance their functionality.
+与[合约](../contracts/configurable-constants.md)和[脚本](../scripts/configurable-constants.md)类似，断言也支持可配置常量。这使得断言能够适应特定的用例并增强其功能性。
 
-## Example: Asset Transfer Validation
+## 示例：资产转移验证
 
-Let's consider an example where a predicate is used to validate an asset transfer. In this case, the transfer will only be executed if the recipient's address is on a pre-approved whitelist.
+让我们考虑一个断言用于验证资产转移的示例。在这种情况下，转移只有在接收方地址位于预先批准的白名单上时才会执行。
 
-The following snippet illustrates how this could be implemented:
+以下代码片段演示了如何实现这一点：
 
 <<< @/../../docs-snippets/test/fixtures/forc-projects/whitelisted-address-predicate/src/main.sw#predicate-with-configurable-constants-1{rust:line-numbers}
 
-In this example, you'll notice the use of a configurable constant named `WHITELISTED`. This constant has a default value that represents the default approved address.
+在这个示例中，您会注意到使用了一个名为 `WHITELISTED` 的可配置常量。该常量具有一个默认值，表示默认批准的地址。
 
-## Modifying The Whitelist
+## 修改白名单
 
-If there is a need to whitelist another address, the `WHITELISTED` constant can be easily updated. The following snippet demonstrates how to set a new value for the `WHITELISTED` constant and to make the predicate execute the transfer:
+如果需要将另一个地址加入白名单，可以轻松更新 `WHITELISTED` 常量。以下代码片段演示了如何为 `WHITELISTED` 常量设置一个新值，并使断言执行转移：
 
 <<< @/../../docs-snippets/src/guide/predicates/predicate-with-configurable.test.ts#predicate-with-configurable-constants-2{ts:line-numbers}
 
-By ensuring that the updated `WHITELISTED` address matches the intended recipient's address, the predicate will validate the transfer successfully.
+通过确保更新后的 `WHITELISTED` 地址与预期的接收方地址匹配，断言将成功验证转移。
 
-## Default Whitelist Address
+## 默认白名单地址
 
-In scenarios where the default whitelisted address is already the intended recipient, there's no need to update the `WHITELISTED` constant. The predicate will validate the transfer based on the default value. Here's how this scenario might look:
+在默认白名单地址已经是预期的接收方的情况下，无需更新 `WHITELISTED` 常量。断言将基于默认值验证转移。以下是此场景的示例：
 
 <<< @/../../docs-snippets/src/guide/predicates/predicate-with-configurable.test.ts#predicate-with-configurable-constants-3{ts:line-numbers}
 
-This ability to configure constants within predicates provides a flexible mechanism for customizing their behavior, thereby enhancing the robustness and versatility of our asset transfer process.
+在断言内部配置常量的能力提供了一种灵活的机制，用于定制其行为，从而增强了我们的资产转移流程的健壮性和多功能性。
 
-It's important to note that these customizations do not directly modify the original predicate. The address of a predicate is a hash of its bytecode. Any change to the bytecode, including altering a constant value, would generate a different bytecode, and thus a different hash. This leads to the creation of a new predicate with a new address.
+需要注意的是，这些自定义不会直接修改原始断言。断言的地址是其字节码的哈希值。对字节码的任何更改，包括更改常量值，都会生成不同的字节码，从而生成不同的哈希值。这将导致创建一个具有新地址的新断言。
 
-This doesn't mean that we're changing the behavior of the original predicate. Instead, we're creating a new predicate with a different configuration.
+这并不意味着我们正在更改原始断言的行为。相反，我们正在创建一个具有不同配置的新断言。
 
-Therefore, while configurable constants do indeed enhance the flexibility and robustness of predicates, it is achieved by creating new predicates with different configurations, rather than altering the behavior of existing ones.
+因此，虽然可配置常量确实增强了断言的灵活性和健壮性，但是它是通过创建具有不同配置的新断言来实现的，而不是通过更改现有断言的行为。
