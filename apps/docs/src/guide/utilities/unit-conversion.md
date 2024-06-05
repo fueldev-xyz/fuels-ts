@@ -1,73 +1,73 @@
-# Unit conversion
+# 单位转换
 
-Internally, we use [Arbitrary-precision](https://mathworld.wolfram.com/ArbitraryPrecision.html) arithmetic (also known as Big Number arithmetic) to allow for the handling of large numbers and different assets.
+在内部，我们使用[任意精度](https://mathworld.wolfram.com/ArbitraryPrecision.html)算术（也称为大数算术）来处理大数字和不同的资产。
 
-On the Fuel network, we work with 9 decimals to represent amounts under a unit. This differs from chain to chain, so it is important to know the number of decimals used on the chain you are working with.
+在 Fuel 网络上，我们使用 9 位小数来表示单位下的金额。这取决于不同的链，所以了解您正在使用的链上使用的小数位数是很重要的。
 
-> Note: The package [`@fuels/assets`](https://www.npmjs.com/package/@fuels/assets) provides a list of assets and their decimals.
+> 注意：[`@fuels/assets`](https://www.npmjs.com/package/@fuels/assets)包提供了一组资产及其小数位数的列表。
 
-Below we will go over some common use cases for unit conversion.
+以下我们将介绍单位转换的一些常见用例。
 
-Using our `BN` class we can instantiate these numbers.
+使用我们的 `BN` 类，我们可以实例化这些数字。
 
 <<< @/../../docs-snippets/src/guide/utilities/unit-conversion.test.ts#instantiation-1{ts:line-numbers}
 
-Or using our `bn` utility function.
+或者使用我们的 `bn` 实用函数。
 
 <<< @/../../docs-snippets/src/guide/utilities/unit-conversion.test.ts#instantiation-2{ts:line-numbers}
 
-## Contract calls
+## 合约调用
 
-Generally, we will need to convert `u64` and `u256` numbers to a `BN` object when passing them to a Sway program from JavaScript. More information on this can be found [here](../types/numbers.md).
+通常，当我们从 JavaScript 向 Sway 程序传递 `u64` 和 `u256` 数字时，我们需要将它们转换为 `BN` 对象。有关更多信息，请参阅[此处](../types/numbers.md)。
 
 <<< @/../../docs-snippets/src/guide/utilities/unit-conversion.test.ts#contract-calls-1{ts:line-numbers}
 
-> Note: If a contract call returns a number that is too large to be represented as a JavaScript number, you can convert it to a string using the `toString` method instead of `toNumber`.
+> 注意：如果合约调用返回的数字太大，无法表示为 JavaScript 数字，您可以使用 `toString` 方法而不是 `toNumber` 将其转换为字符串。
 
-## Parsing
+## 解析
 
-Parsing string-represented numbers (from user input) has never been easier, than using the `parseUnits` function.
+解析字符串表示的数字（来自用户输入）从未如此简单，使用 `parseUnits` 函数。
 
 <<< @/../../docs-snippets/src/guide/utilities/unit-conversion.test.ts#parse-units-1{ts:line-numbers}
 
-We can parse large numbers.
+我们可以解析大数字。
 
 <<< @/../../docs-snippets/src/guide/utilities/unit-conversion.test.ts#parse-units-2{ts:line-numbers}
 
-Or numbers formatted for human readability.
+或者格式化为人类可读的数字。
 
 <<< @/../../docs-snippets/src/guide/utilities/unit-conversion.test.ts#parse-units-3{ts:line-numbers}
 
-We can also parse numbers in other units of measure.
+我们还可以解析其他计量单位的数字。
 
 <<< @/../../docs-snippets/src/guide/utilities/unit-conversion.test.ts#parse-units-4{ts:line-numbers}
 
-## Formatting
+## 格式化
 
-We can format common units of measure using the `format` function.
+我们可以使用 `format` 函数格式化常见的计量单位。
 
-In the following example, we format a BigNumber representation of one Gwei, into units for the Fuel network (with 3 decimal place precision).
+在下面的示例中，我们将一个表示一个 Gwei 的 BigNumber 格式化为 Fuel 网络的单位（保留 3 位小数）。
 
 <<< @/../../docs-snippets/src/guide/utilities/unit-conversion.test.ts#format-1{ts:line-numbers}
 
-We can also format numbers in other units of measure by specifying the `units` variable.
+我们还可以通过指定 `units` 变量来格式化其他计量单位的数字。
 
 <<< @/../../docs-snippets/src/guide/utilities/unit-conversion.test.ts#format-2{ts:line-numbers}
 
-A `precision` variable will allow for the formatting of numbers with a specific number of decimal places.
+`precision` 变量将允许格式化具有特定小数位数的数字。
 
 <<< @/../../docs-snippets/src/guide/utilities/unit-conversion.test.ts#format-3{ts:line-numbers}
 
-### Format units
+### 格式化单位
 
-The `formatUnits` function is a lesser alternative to the `format` function, as it will maintain the same precision as the input value.
+`formatUnits` 函数是 `format` 函数的一个较小的替代方案，因为它将保持与输入值相同的精度。
 
 <<< @/../../docs-snippets/src/guide/utilities/unit-conversion.test.ts#format-units-1{ts:line-numbers}
 
-We can also format numbers in other units of measure by specifying the `units` variable.
+我们还可以通过指定 `units` 变量来格式化其他计量单位的数字。
 
 <<< @/../../docs-snippets/src/guide/utilities/unit-conversion.test.ts#format-units-2{ts:line-numbers}
 
-## See also
+## 另请参阅
 
-- [Sway Numbers](../types/numbers.md)
+- [Sway 数字](../types/numbers.md)
