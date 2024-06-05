@@ -1,55 +1,55 @@
-# Instantiating Wallets
+# 实例化钱包
 
-Wallets can be instantiated in multiple ways within the SDK.
+SDK中可以以多种方式实例化钱包。
 
-## Generating new wallets
+## 生成新钱包
 
-To generate a new, unlocked wallet, use the [`generate`](../../api/Account/Wallet.md#generate) method. This method creates a new [`WalletUnlocked`](../../api/Account/WalletUnlocked.md) instance, which is immediately ready for use.
+要生成一个新的、解锁的钱包，请使用[`generate`](../../api/Account/Wallet.md#generate)方法。此方法会创建一个新的[`WalletUnlocked`](../../api/Account/WalletUnlocked.md)实例，该实例立即可用。
 
 <<< @/../../docs-snippets/src/guide/wallets/instantiating-wallets.test.ts#instantiating-wallets-1{ts:line-numbers}
 
-## Instantiating Unlocked Wallets
+## 实例化解锁的钱包
 
-Creating [`WalletUnlocked`](../../api/Account/WalletUnlocked.md) instances of your existing wallets is easy and can be done in several ways:
+创建您现有钱包的[`WalletUnlocked`](../../api/Account/WalletUnlocked.md)实例很容易，可以通过多种方式完成：
 
-From a private key:
+从私钥：
 
 <<< @/../../docs-snippets/src/guide/wallets/instantiating-wallets.test.ts#instantiating-wallets-2{ts:line-numbers}
 
-From a mnemonic phrase:
+从助记词短语：
 
 <<< @/../../docs-snippets/src/guide/wallets/instantiating-wallets.test.ts#instantiating-wallets-3{ts:line-numbers}
 
-From a seed:
+从种子：
 
 <<< @/../../docs-snippets/src/guide/wallets/instantiating-wallets.test.ts#instantiating-wallets-4{ts:line-numbers}
 
-From a Hierarchical Deterministic (HD) derived key:
+从分层确定性（HD）派生密钥：
 
 <<< @/../../docs-snippets/src/guide/wallets/instantiating-wallets.test.ts#instantiating-wallets-5{ts:line-numbers}
 
-From a JSON wallet:
+从JSON钱包：
 
 <<< @/../../docs-snippets/src/guide/wallets/instantiating-wallets.test.ts#instantiating-wallets-6{ts:line-numbers}
 
-It's possible to instantiate a `WalletUnlocked` from a `WalletLocked`:
+可以从`WalletLocked`实例化一个`WalletUnlocked`：
 
 <<< @/../../docs-snippets/src/guide/wallets/instantiating-wallets.test.ts#instantiating-wallets-7{ts:line-numbers}
 
-## Instantiating Locked Wallets
+## 实例化锁定的钱包
 
-You can also instantiate [`WalletLocked`](../../api/Account/WalletLocked.md) instances using just the wallet address:
+您还可以仅使用钱包地址实例化[`WalletLocked`](../../api/Account/WalletLocked.md)实例：
 
 <<< @/../../docs-snippets/src/guide/wallets/instantiating-wallets.test.ts#instantiating-wallets-8{ts:line-numbers}
 
-## Connecting to a Provider
+## 连接到提供程序
 
-While wallets can be used independently of a [`Provider`](../../api/Account/Provider.md), operations requiring blockchain interaction will need one.
+虽然钱包可以独立于[`Provider`](../../api/Account/Provider.md)使用，但需要进行区块链交互的操作将需要提供程序。
 
-Connecting an existing wallet to a Provider:
+将现有钱包连接到提供程序：
 
 <<< @/../../docs-snippets/src/guide/wallets/instantiating-wallets.test.ts#instantiating-wallets-9{ts:line-numbers}
 
-Instantiating a wallet with a Provider:
+使用提供程序实例化钱包：
 
 <<< @/../../docs-snippets/src/guide/wallets/instantiating-wallets.test.ts#instantiating-wallets-10{ts:line-numbers}
