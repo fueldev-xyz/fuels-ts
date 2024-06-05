@@ -18,7 +18,6 @@ Sway 提供了 `Option`（可选）容器来处理可能具有值或标记为“
 
 下面是用 Sway 编写的合约函数：
 
-\```rust
 <<< @/../../docs-snippets/test/fixtures/forc-projects/sum-option-u8/src/main.sw#options-2{rust:line-numbers}
 
 您可以使用 SDK 与合约函数交互，如下所示：
