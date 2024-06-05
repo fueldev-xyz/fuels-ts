@@ -1,23 +1,23 @@
-# Tuples
+# 元组
 
-In Sway, Tuples are fixed-length collections of heterogeneous elements. Tuples can store multiple data types, including basic types, structs, and enums. This guide will demonstrate how to represent and work with Tuples in TypeScript and interact with a contract function that accepts a tuple as a parameter.
+在 Sway 中，元组是固定长度的异构元素集合。元组可以存储多种数据类型，包括基本类型、结构体和枚举。本指南将演示如何在 TypeScript 中表示和处理元组，并与接受元组作为参数的合约函数进行交互。
 
-In TypeScript, you can represent Sway tuples using arrays with specified types for each element:
+在 TypeScript 中，您可以使用指定类型的数组来表示 Sway 元组，每个元素的类型都不同：
 
 <<< @/../../docs-snippets/src/guide/types/tuples.test.ts#tuples-1{ts:line-numbers}
 
-In this example, the Typescript `tuple` variable contains three elements of different types: a number, a boolean, and another number.
+在这个示例中，Typescript 的 `tuple` 变量包含三个不同类型的元素：一个数字、一个布尔值和另一个数字。
 
-## Example: Passing Tuple as a Parameter
+## 示例：将元组作为参数传递
 
-Let's consider a contract function that accepts a tuple as a parameter and returns the same Tuple:
+让我们考虑一个接受元组作为参数并返回相同元组的合约函数：
 
 <<< @/../../docs-snippets/test/fixtures/forc-projects/echo-values/src/main.sw#tuples-2{rust:line-numbers}
 
-To execute and validate the contract function using the SDK, follow these steps:
+要使用 SDK 执行和验证合约函数，请按照以下步骤进行：
 
 <<< @/../../docs-snippets/src/guide/types/tuples.test.ts#tuples-3{ts:line-numbers}
 
-In this example, we create a Tuple with three elements, call the `echo_tuple` contract function, and expect the returned tuple to match the original one. Note that we convert the third element of the returned tuple to a number using `new BN(value[2]).toNumber()`.
+在这个示例中，我们创建了一个包含三个元素的元组，调用了 `echo_tuple` 合约函数，并期望返回的元组与原始元组相匹配。请注意，我们使用 `new BN(value[2]).toNumber()` 将返回的元组的第三个元素转换为数字。
 
-Tuples in Sway provide a convenient way to store and manipulate collections of heterogeneous elements. Understanding how to represent and work with tuples in TypeScript and Sway contracts will enable you to create more versatile and expressive code.
+Sway 中的元组提供了一种方便的方式来存储和操作异构元素的集合。了解如何在 TypeScript 和 Sway 合约中表示和处理元组将使您能够创建更多样化和表达力强的代码。

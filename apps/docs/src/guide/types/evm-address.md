@@ -1,25 +1,25 @@
 # `EvmAddress`
 
-An Ethereum Virtual Machine (EVM) Address can be represented using the `EvmAddress` type. It's definition matches the Sway standard library type being a `Struct` wrapper around an inner `Bits256` value.
+以太坊虚拟机 (EVM) 地址可以使用 `EvmAddress` 类型表示。其定义与 Sway 标准库类型相匹配，是一个围绕内部 `Bits256` 值的 `Struct` 包装器。
 
 <<< @/../../docs-snippets/src/guide/types/evm-address.test.ts#evm-address-1{ts:line-numbers}
 
-## Creating an EVM Address
+## 创建 EVM 地址
 
-An EVM Address only has 20 bytes therefore the first 12 bytes of the `Bits256` value are set to 0. Within the SDK, an `Address` can be instantiated and converted to a wrapped and Sway compatible EVM Address using the `toEvmAddress()` function:
+EVM 地址仅有 20 字节，因此 `Bits256` 值的前 12 字节设置为 0。在 SDK 中，可以实例化一个 `Address`，并使用 `toEvmAddress()` 函数将其转换为一个包装的、与 Sway 兼容的 EVM 地址：
 
 <<< @/../../docs-snippets/src/guide/types/evm-address.test.ts#evm-address-2{ts:line-numbers}
 
-## Using an EVM Address
+## 使用 EVM 地址
 
-The `EvmAddress` type can be integrated with your contract calls. Consider the following contract that can compare and return an EVM Address:
+`EvmAddress` 类型可以与您的合约调用集成。考虑以下可以比较和返回 EVM 地址的合约：
 
 <<< @/../../docs-snippets/test/fixtures/forc-projects/echo-evm-address/src/main.sw#evm-address-1{ts:line-numbers}
 
-The `EvmAddress` type can be used with the SDK and passed to the contract function as follows:
+可以使用 SDK 并将 `EvmAddress` 传递给合约函数，如下所示：
 
 <<< @/../../docs-snippets/src/guide/types/evm-address.test.ts#evm-address-3{ts:line-numbers}
 
-And to validate the returned value:
+并验证返回的值：
 
 <<< @/../../docs-snippets/src/guide/types/evm-address.test.ts#evm-address-4{ts:line-numbers}

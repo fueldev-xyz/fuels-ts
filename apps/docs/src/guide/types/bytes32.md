@@ -1,19 +1,19 @@
 # Bytes32
 
-In Sway and the FuelVM, `bytes32` is used to represent hashes. It holds a 256-bit (32-bytes) value.
+在 Sway 和 FuelVM 中，`bytes32` 用于表示哈希。它保存了一个 256 位（32 字节）的值。
 
-## Generating Random bytes32 Values
+## 生成随机 bytes32 值
 
-To generate a random `bytes32` value, you can use the `randomBytes` function from the fuels module:
+要生成随机的 `bytes32` 值，可以使用 fuels 模块中的 `randomBytes` 函数：
 
 <<< @/../../docs-snippets/src/guide/types/bytes32.test.ts#bytes32-1{ts:line-numbers}
 
-## Converting Between Byte Arrays and Strings
+## 字节数组和字符串之间的转换
 
-You can use the `hexlify` function to convert a byte array to a hex string, and the `arrayify` function to convert a hex string back to a byte array:
+您可以使用 `hexlify` 函数将字节数组转换为十六进制字符串，使用 `arrayify` 函数将十六进制字符串转换回字节数组：
 
 <<< @/../../docs-snippets/src/guide/types/bytes32.test.ts#bytes32-2{ts:line-numbers}
 
-## Working with b256 in Fuel
+## 在 Fuel 中使用 b256
 
-In Fuel, there is a special type called b256, which is similar to `bytes32`. Like `bytes32`, `b256` is also used to represent hashes and holds a 256-bit value. You can learn more about working with `b256` values in the [Bits256 documentation](./bits256.md).
+在 Fuel 中，有一种特殊的类型称为 b256，它类似于 `bytes32`。与 `bytes32` 类似，`b256` 也用于表示哈希并保存 256 位值。您可以在 [Bits256 文档](./bits256.md)中了解有关使用 `b256` 值的更多信息。

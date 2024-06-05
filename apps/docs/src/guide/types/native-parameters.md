@@ -1,76 +1,78 @@
-# Native Parameter Types
+# 本地参数类型
 
-Below you can find examples of how to convert between common native Sway program input and output types:
+下面是如何在常见的 Sway 程序输入和输出类型之间进行转换的示例:
 
-- [`Address`](#address)
-- [`ContractId`](#contractid)
-- [`Identity`](#identity)
-- [`AssetId`](#assetid)
+- [`地址`](#地址)
+- [`合约标识`](#合约标识)
+- [`身份`](#身份)
+- [`资产标识`](#资产标识)
 
-## `Address`
+## `地址`
 
-### `AddressInput`
+### `地址输入`
 
-To pass an `Address` as an input parameter to a Sway program, you can define the input as shown below:
+要将 `地址` 作为 Sway 程序的输入参数传递，可以按以下方式定义输入:
 
 <<< @/../../docs-snippets/src/guide/types/contract-types.test.ts#address-input
 
-### `AddressOutput`
+### `地址输出`
 
-For a Sway program that returns an `Address` type, you can convert the returned value to an `Address` type in `fuels` as shown below:
+对于返回 `地址` 类型的 Sway 程序，您可以将返回值转换为 `fuels` 中的 `地址` 类型，如下所示:
 
 <<< @/../../docs-snippets/src/guide/types/contract-types.test.ts#address-output
 
-## `ContractId`
+## `合约标识`
 
-### `ContractIdInput`
+### `合约标识输入`
 
-To pass a `ContractId` as an input parameter to a Sway program, you can define the input as shown below:
+要将 `合约标识` 作为 Sway 程序的输入参数传递，可以按以下方式定义输入:
+
 
 <<< @/../../docs-snippets/src/guide/types/contract-types.test.ts#contract-id-input
 
-### `ContractIdOutput`
 
-For a Sway program that returns a `ContractId` type, you can convert the returned value to a `string` as shown below:
+### `合约标识输出`
+
+对于返回 `合约标识` 类型的 Sway 程序，您可以将返回值转换为 `字符串`，如下所示:
 
 <<< @/../../docs-snippets/src/guide/types/contract-types.test.ts#contract-id-output
 
-## `Identity`
+## `身份`
 
-### `IdentityInput`
+### `身份输入`
 
-To pass an `Identity` as an input parameter to a Sway program, you can define the input as shown below:
+要将 `身份` 作为 Sway 程序的输入参数传递，可以按以下方式定义输入:
 
-For an address:
+对于地址:
 
 <<< @/../../docs-snippets/src/guide/types/contract-types.test.ts#identity-address-input
 
-For a contract:
+对于合约:
 
 <<< @/../../docs-snippets/src/guide/types/contract-types.test.ts#identity-contract-input
 
-### `IdentityOutput`
+### `身份输出`
 
-For a Sway program that returns an `Identity` type, you can convert the returned value to an `Address` or `string` as shown below:
+对于返回 `身份` 类型的 Sway 程序，您可以将返回值转换为 `地址` 或 `字符串`，如下所示:
 
-For an address:
+对于地址:
 
 <<< @/../../docs-snippets/src/guide/types/contract-types.test.ts#identity-address-output
 
-For a contract:
+对于合约:
 
 <<< @/../../docs-snippets/src/guide/types/contract-types.test.ts#identity-contract-output
 
-## `AssetId`
+## `资产标识`
 
-### `AssetIdInput`
+### `资产标识输入`
 
-To pass an `AssetId` as an input parameter to a Sway program, you can define the input as shown below:
+要将 `资产标识` 作为 Sway 程序的输入参数传递，可以按以下方式定义输入:
 
 <<< @/../../docs-snippets/src/guide/types/contract-types.test.ts#asset-id-input
 
-### `AssetIdOutput`
+### `资产标识输出`
 
-For a Sway program that returns an `AssetId` type, you can convert the returned value to a `string` as shown below:
+对于返回 `资产标识` 类型的 Sway 程序，您可以将返回值转换为 `字符串`，如下所示:
 
 <<< @/../../docs-snippets/src/guide/types/contract-types.test.ts#asset-id-output

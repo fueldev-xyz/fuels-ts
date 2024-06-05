@@ -1,43 +1,43 @@
-# Numbers
+# 数字
 
-In Sway, there are multiple primitive number types:
+在 Sway 中，有多种原始数字类型：
 
-1. `u8` (8-bit unsigned integer)
-1. `u16` (16-bit unsigned integer)
-1. `u32` (32-bit unsigned integer)
-1. `u64` (64-bit unsigned integer)
-1. `u256` (256-bit unsigned integer)
+1. `u8`（8位无符号整数）
+1. `u16`（16位无符号整数）
+1. `u32`（32位无符号整数）
+1. `u64`（64位无符号整数）
+1. `u256`（256位无符号整数）
 
-This guide explains how to create and interact with Sway numbers while using the SDK.
+本指南解释了如何在使用 SDK 时创建和操作 Sway 数字。
 
-## Creating Numbers
+## 创建数字
 
-### For `u64` and `u256`
+### 对于 `u64` 和 `u256`
 
-When you pass in a `u64` or a `u256` to a Sway program from JavaScript, you must first convert it to a `BigNum` object. This is because these types can have extremely large maximum values (`2^64` and `2^256` respectively), and JavaScript's `Number` type can only hold up to 53 bits of precision (`2^53`).
+当您从 JavaScript 传递 `u64` 或 `u256` 到 Sway 程序时，必须首先将其转换为 `BigNum` 对象。这是因为这些类型的最大值可以非常大（分别为 `2^64` 和 `2^256`），而 JavaScript 的 `Number` 类型只能容纳高达 53 位的精度（`2^53`）。
 
 <<< @/../../docs-snippets/src/guide/types/numbers.test.ts#numbers-docs-1{ts:line-numbers}
 
-You can also create a `BigNum` from a string. This is useful when you want to pass in a number that is too large to be represented as a JavaScript number. Here's how you can do that:
+您还可以从字符串创建 `BigNum`。当您想要传递无法表示为 JavaScript 数字的大数字时，这很有用。以下是如何做到这一点的示例：
 
 <<< @/../../docs-snippets/src/guide/types/numbers.test.ts#numbers-docs-2{ts:line-numbers}
 
-### For `u8`, `u16`, and `u32`
+### 对于 `u8`、`u16` 和 `u32`
 
-You don't need to do anything special to create these numbers. You can pass in a JavaScript number directly. See the examples below for more details.
+您不需要做任何特殊操作来创建这些数字。您可以直接传递一个 JavaScript 数字。有关更多详细信息，请参见下面的示例。
 
-## Examples: Interacting with Numbers in Contract Methods
+## 示例：与合约方法交互中的数字
 
-### For `u64` and `u256`
+### 对于 `u64` 和 `u256`
 
 <<< @/../../docs-snippets/src/guide/types/numbers.test.ts#numbers-docs-3{ts:line-numbers}
 
-> Note: If a contract call returns a number that is too large to be represented as a JavaScript number, you can convert it to a string using the `.toString()` method instead of `.toNumber()`.
+> 注意：如果合约调用返回的数字太大，无法表示为 JavaScript 数字，则可以使用 `.toString()` 方法将其转换为字符串，而不是 `.toNumber()`。
 
-### For `u8`, `u16`, and `u32`
+### 对于 `u8`、`u16` 和 `u32`
 
 <<< @/../../docs-snippets/src/guide/types/numbers.test.ts#numbers-docs-4{ts:line-numbers}
 
-### Using a `BigNum` from `ethers` with `fuels`
+### 使用 `ethers` 中的 `BigNum` 与 `fuels`
 
 <<< @/../../docs-snippets/src/guide/types/numbers.test.ts#numbers-docs-5{ts:line-numbers}

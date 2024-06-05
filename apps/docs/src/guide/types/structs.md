@@ -1,21 +1,21 @@
-# Structs
+# 结构体
 
-In Sway, a `struct` serves a similar purpose as an `Object` in TypeScript. It defines a custom data structure with specified property names and types. The property names and types in the Sway struct must match the corresponding TypeScript definition.
+在 Sway 中，`struct` 的作用类似于 TypeScript 中的 `Object`。它定义了一个自定义数据结构，具有指定的属性名称和类型。Sway 结构体中的属性名称和类型必须与相应的 TypeScript 定义相匹配。
 
-## Example
+## 示例
 
-Here is an example of a `struct` in Sway:
+以下是 Sway 中 `struct` 的示例：
 
 <<< @/../../docs-snippets/test/fixtures/forc-projects/employee-data/src/lib.sw#struct-1{rust:line-numbers}
 
-And here is the equivalent structure represented in TypeScript:
+这是 TypeScript 中表示的等效结构：
 
 <<< @/../../docs-snippets/src/guide/types/struct.test.ts#struct-2{ts:line-numbers}
 
-## Handling Different Data Types
+## 处理不同的数据类型
 
-Please note that TypeScript does not have native support for `u8` and `u64` types. Instead, use the `number` type to represent them.
+请注意，TypeScript 不支持 `u8` 和 `u64` 类型。相反，使用 `number` 类型来表示它们。
 
-Additionally, TypeScript does not support specifying string length, so just use `string` for the `name`.
+此外，TypeScript 不支持指定字符串长度，因此对于 `name`，只需使用 `string` 即可。
 
-In a similar way, since the type `b256` on the SDK is just an hexlified string, we use `string` as well.
+类似地，由于 SDK 上的类型 `b256` 只是一个十六进制字符串，因此我们也使用 `string`。

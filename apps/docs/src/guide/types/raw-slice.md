@@ -1,15 +1,15 @@
 # `RawSlice`
 
-A dynamic array of values can be represented using the `RawSlice` type. A raw slice can be a value reference or a raw pointer.
+可以使用 `RawSlice` 类型表示值的动态数组。原始切片可以是值引用或原始指针。
 
 <<< @/../../docs-snippets/src/guide/types/raw-slice.test.ts#raw-slice-1{ts:line-numbers}
 
-## Using a `RawSlice`
+## 使用 `RawSlice`
 
-The `RawSlice` type can be integrated with your contract calls. Consider the following contract that can compare and return a `RawSlice`:
+`RawSlice` 类型可以与您的合约调用集成。考虑以下可以比较并返回 `RawSlice` 的合约：
 
 <<< @/../../docs-snippets/test/fixtures/forc-projects/echo-raw-slice/src/main.sw#raw-slice-1{ts:line-numbers}
 
-A `RawSlice` can be created using a native JavaScript array of numbers or Big Numbers, and sent to a Sway contract:
+可以使用原生 JavaScript 数组或大数数组来创建 `RawSlice`，并发送到 Sway 合约：
 
 <<< @/../../docs-snippets/src/guide/types/raw-slice.test.ts#raw-slice-2{ts:line-numbers}

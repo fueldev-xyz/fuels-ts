@@ -1,21 +1,21 @@
 # `Bits256`
 
-The type `b256` in Fuel represents hashes and holds a 256-bit (32-bytes) value. The TypeScript SDK represents `b256` as a hexlified string value for portability and provides utilities to convert to `Uint8Array` when the [raw bytes](./bytes32.md) are required.
+在 Fuel 中，类型 `b256` 代表哈希并保存一个 256 位（32 字节）的值。TypeScript SDK 将 `b256` 表示为十六进制字符串值以实现可移植性，并提供将 [原始字节](./bytes32.md) 转换为 `Uint8Array` 的实用工具。
 
-## Generating random `b256` values
+## 生成随机的 `b256` 值
 
-To generate a random `b256` value, you can use the `getRandomB256()` function:
+要生成随机的 `b256` 值，您可以使用 `getRandomB256()` 函数：
 
 <<< @/../../docs-snippets/src/guide/types/bits256.test.ts#bits256-1{ts:line-numbers}
 
-### Converting between `b256` and `Uint8Array`
+### 在 `b256` 和 `Uint8Array` 之间进行转换
 
-To convert between a `b256` hexlified string and a `Uint8Array`, you can use the `arrayify` and `hexlify` functions:
+要在 `b256` 十六进制字符串和 `Uint8Array` 之间进行转换，您可以使用 `arrayify` 和 `hexlify` 函数：
 
 <<< @/../../docs-snippets/src/guide/types/bits256.test.ts#bits256-2{ts:line-numbers}
 
-## Support from `Address` Class
+## `Address` 类的支持
 
-A `b256` value is also supported as part of the [`Address`](../../api/Address/Address.md) class, providing seamless integration with other components of your application. To create an [`Address`](../../api/Address/Address.md) instance from a b256 value, use the `Address.fromB256()` method:
+作为 [`Address`](../../api/Address/Address.md) 类的一部分，`b256` 值也得到了支持，可与应用程序的其他组件无缝集成。要从 b256 值创建一个 [`Address`](../../api/Address/Address.md) 实例，请使用 `Address.fromB256()` 方法：
 
 <<< @/../../docs-snippets/src/guide/types/bits256.test.ts#bits256-3{ts:line-numbers}

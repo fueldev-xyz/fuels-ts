@@ -1,23 +1,23 @@
 # Types
 
-As you dive deeper into the SDK, it's essential to understand the variety of internal types available in both FuelVM and Sway, as well as their corresponding SDK equivalents. This section aims to provide you with the necessary knowledge to efficiently work with these types.
+当您深入研究 SDK 时，了解 FuelVM 和 Sway 中的各种内部类型及其对应的 SDK 等效类型是至关重要的，这一部分旨在为您提供必要的知识，以便有效地使用这些类型。
 
-## Overview
+## 概述
 
-In this section, you will learn about:
+在本节中，您将了解以下内容：
 
-1. `FuelVM and Sway Internal Types`: Discover the various types used within FuelVM and Sway, and their significance in different contexts.
+1. `FuelVM 和 Sway 内部类型`：了解 FuelVM 和 Sway 中使用的各种类型，以及它们在不同上下文中的重要性。
 
-2. `SDK Equivalents`: Explore the corresponding types available in the SDK, and understand their similarities and differences compared to FuelVM and Sway internal types.
+2. `SDK 等效类型`：探索 SDK 中提供的相应类型，并了解它们与 FuelVM 和 Sway 内部类型相比的相似之处和差异。
 
-3. `Type Usage`: Gain insights into how to effectively use these types in your projects or applications, with examples and best practices.
+3. `类型使用`：深入了解如何在项目或应用程序中有效使用这些类型，包括示例和最佳实践。
 
-4. `Type Conversion`: Learn the techniques and methods for converting between FuelVM, Sway, and SDK types, guaranteeing smooth interoperability and consistent data integrity.
+4. `类型转换`：学习在 FuelVM、Sway 和 SDK 类型之间进行转换的技术和方法，确保平滑的互操作性和一致的数据完整性。
 
-## Additional Resources
+## 其他资源
 
-As you progress through the documentation, you may find it helpful to refer back to the following resources:
+在阅读文档时，您可能会发现参考以下资源很有帮助：
 
-- [Sway Documentation](https://docs.fueldev.xyz/docs/sway/): Explore the Sway documentation homepage for an overview of Sway Types, as well as other sections.
+- [Sway 文档](https://docs.fueldev.xyz/docs/sway/)：浏览 Sway 文档主页，了解 Sway 类型的概述以及其他部分。
 
-- [The Fuel Book](https://fuelbook.fuel.network/master/index.html): A comprehensive guide to the whole Fuel ecosystem.
+- [Fuel 书籍](https://fuelbook.fuel.network/master/index.html)：全面介绍整个 Fuel 生态系统的指南。
