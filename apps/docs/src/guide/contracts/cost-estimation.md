@@ -4,14 +4,14 @@
 
 <<< @/../../../packages/account/src/providers/provider.ts#cost-estimation-1{ts:line-numbers}
 
-以下示例演示了如何获取以下情况的估算事务成本：
+以下示例演示了如何获取以下情况的估算交易成本：
 
-## 1. 单个合约调用事务：
+## 1. 单个合约调用交易：
 
 <<< @/../../docs-snippets/src/guide/contracts/cost-estimation.test.ts#cost-estimation-1{ts:line-numbers}
 
-## 2. 多个合约调用事务：
+## 2. 多个合约调用交易：
 
 <<< @/../../docs-snippets/src/guide/contracts/cost-estimation.test.ts#cost-estimation-2{ts:line-numbers}
 
-你可以使用事务成本估算来为实际调用设置气体限制，或向用户显示估算成本。
+你可以使用交易成本估算来为实际调用设置气体限制，或向用户显示估算成本。

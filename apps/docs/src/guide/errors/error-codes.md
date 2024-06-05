@@ -18,7 +18,7 @@
 
 在操作中需要 [`Account`](../../api/Account/Account.md)。通常会是一个 [`Wallet`](../wallets/index.md)。
 
-这可能是在部署合约期间需要账户签名事务时引起的。可以通过按照[此处](../contracts/deploying-contracts.md)的部署指南解决。
+这可能是在部署合约期间需要账户签名交易时引起的。可以通过按照[此处](../contracts/deploying-contracts.md)的部署指南解决。
 
 ## `CONVERTING_FAILED`
 
@@ -28,9 +28,9 @@
 
 ## `DUPLICATED_POLICY`
 
-当事务中存在相同类型的策略时。
+当交易中存在相同类型的策略时。
 
-确保事务中没有重复（按类型）的策略。
+确保交易中没有重复（按类型）的策略。
 
 ## `ERROR_BUILDING_BLOCK_EXPLORER_URL`
 
