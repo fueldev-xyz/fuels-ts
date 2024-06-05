@@ -6,8 +6,9 @@
   `
 </script>
 
-# Scripts
+# 脚本
 
-A script, in Sway, is runnable bytecode on the chain which executes once to perform some task. A script can return a single value of any type.
+在 Sway 中，脚本是可以在链上运行的字节码，它执行一次以执行某些任务。脚本可以返回任意类型的单个值。
 
-Learn more about scripts <a :href="url" target="_blank" rel="noreferrer">here</a>.
+了解有关脚本的更多信息<a :href="url" target="_blank" rel="noreferrer">在这里</a>。
+

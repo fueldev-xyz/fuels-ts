@@ -1,28 +1,28 @@
-# Transaction Parameters
+# 交易参数
 
-Transaction parameters allow you to configure various aspects of your blockchain transactions. Dependent on these parameters, it may introduce a [transaction policy](./transaction-policies.md). The parameters are:
+交易参数允许您配置区块链交易的各个方面。取决于这些参数，可能会引入[交易策略](./transaction-policies.md)。这些参数包括：
 
-1. Gas Price - The price you're willing to pay for each unit of [gas](https://docs.fueldev.xyz/docs/intro/glossary/#gas) consumed during the transaction execution.
-1. Gas Limit - The maximum amount of gas you're willing to allow the transaction to consume. If the amount of gas a transaction will use is greater than the gas limit, the transaction will fail.
-1. Max Fee - The maximum amount you're willing to pay for the transaction using the base asset. This is the price of each unit of gas multiplied by the amount of gas used.
-1. Maturity - The number of blocks that must pass before the transaction can be included in a block. This is useful for time-sensitive transactions, such as those involving time-locked assets.
-1. Witness Limit - The maximum number of witnesses allowed in the transaction. Witnesses are used in transactions that require multiple signatures, such as those involving multi-signature wallets.
-1. Variable Outputs - The number of variable outputs allowed in the transaction. Variable outputs are used in transactions that have a dynamic number of outputs, such as those involving multiple recipients or complex contract interactions. By setting this value, you can control the number of variable outputs permitted in the transaction, which can be useful for managing transaction size and complexity.
+1. 燃气价格 - 您愿意为交易执行期间每单位[燃气](https://docs.fueldev.xyz/docs/intro/glossary/#gas)支付的价格。
+2. 燃气限制 - 您愿意允许交易消耗的最大燃气量。如果交易将使用的燃气量大于燃气限制，则交易将失败。
+3. 最大费用 - 使用基础资产支付交易的最大金额。这是每单位燃气的价格乘以使用的燃气量。
+4. 成熟期 - 交易可以被包含在一个块中之前必须经过的块数量。这对于时间敏感的交易非常有用，例如涉及时间锁定资产的交易。
+5. 见证人限制 - 交易中允许的最大见证人数量。见证人用于需要多个签名的交易，例如涉及多重签名钱包的交易。
+6. 可变输出 - 交易中允许的可变输出数量。可变输出用于具有动态输出数量的交易，例如涉及多个接收方或复杂合约交互的交易。通过设置此值，您可以控制交易中允许的可变输出数量，这对于管理交易大小和复杂性非常有用。
 
-> **Note**: Setting transaction parameters is optional. If you don't specify them, the SDK will fetch some sensible defaults from the chain.
+> **注意**：设置交易参数是可选的。如果不指定，SDK 将从链上获取一些合理的默认值。
 
-All available parameters are shown below:
+以下是所有可用参数：
 
 <<< @/../../docs-snippets/src/guide/transactions/transaction-parameters.test.ts#transaction-parameters-1{ts:line-numbers}
 
-## Setting Transaction Parameters
+## 设置交易参数
 
-To set the transaction parameters, you have access to the `txParams` method on a transaction request.
+要设置交易参数，您可以在交易请求上使用 `txParams` 方法。
 
 <<< @/../../docs-snippets/src/guide/transactions/transaction-parameters.test.ts#transaction-parameters-2{ts:line-numbers}
 
-The same method is also accessible within a function invocation scope, so it can also be used when calling contract functions.
+同样的方法也可以在函数调用作用域内访问，因此在调用合约函数时也可以使用它。
 
 <<< @/../../docs-snippets/src/guide/transactions/transaction-parameters.test.ts#transaction-parameters-3{ts:line-numbers}
 
-> **Note:** When performing an action that results in a transaction (e.g. contract deployment, contract call with `.call()`, asset transfer), the SDK will automatically estimate the fee based on the gas limit and the transaction's byte size. This estimation is used when building the transaction. As a side effect, your wallet must own at least one coin of the base asset, regardless of the amount.
+> **注意：** 当执行导致交易的操作时（例如合约部署、使用 `.call()` 进行合约调用、资产转移），SDK 将自动根据燃气限制和交易的字节大小估算费用。此估算用于构建交易。作为副作用，您的钱包必须拥有至少一枚基础资产的硬币，无论数量多少。

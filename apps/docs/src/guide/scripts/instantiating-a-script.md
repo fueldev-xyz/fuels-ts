@@ -6,10 +6,11 @@
   `
 </script>
 
-# Instantiating a script
+# 实例化脚本
 
-Similar to contracts and predicates, once you've written a script in Sway and compiled it with `forc build` (read <a :href="url" target="_blank" rel="noreferrer">here</a> for more on how to work with Sway), you'll get the script binary. Using the binary, you can instantiate a `script` as shown in the code snippet below:
+与合约和断言类似，一旦您在 Sway 中编写了脚本并使用 `forc build` 编译它（了解有关如何使用 Sway 的更多信息，请阅读<a :href="url" target="_blank" rel="noreferrer">此处</a>），您将获得脚本二进制文件。使用二进制文件，您可以像下面的代码片段一样实例化一个 `script`：
 
 <<< @/../../../packages/script/src/script.test.ts#script-init{ts:line-numbers}
 
-In the [next section](./running-scripts.md), we show how to run a script.
+在[下一节](./running-scripts.md)中，我们将展示如何运行一个脚本。
+

@@ -4,40 +4,40 @@
   const url = `https://docs.fueldev.xyz/docs/forc/commands/forc_test/`
 </script>
 
-# Testing
+# 测试
 
-In order to test your Sway and TS-SDK applications, you can test your code in a number of ways:
+为了测试您的 Sway 和 TS-SDK 应用程序，您可以通过多种方式测试您的代码：
 
-1. Testing with TS-SDK: Compiling you Sway code and connecting to the methods using TS-SDK and JS testing frameworks
-2. Using `forc test` see <a :href="url" target="_blank" rel="noreferrer">the Sway docs</a> for more info
-3. Using [the Rust SDK](https://docs.fueldev.xyz/docs/fuels-rs/testing/)
+1. 使用 TS-SDK 进行测试：编译您的 Sway 代码并使用 TS-SDK 和 JS 测试框架连接到方法
+2. 使用 `forc test`，请参阅 <a :href="url" target="_blank" rel="noreferrer">Sway 文档</a> 了解更多信息
+3. 使用 [Rust SDK](https://docs.fueldev.xyz/docs/fuels-rs/testing/)
 
-### Testing with TS-SDK
+### 使用 TS-SDK 进行测试
 
-To test your Sway applications using the TS-SDK, you can pick whatever testing library or framework you feel comfortable with. There isn't any specific testing framework needed, it is entirely up to the user. That being said, the TS-SDK uses [`Vitest`](https://vitest.dev/) for its tests.
+要使用 TS-SDK 测试您的 Sway 应用程序，您可以选择您感觉舒适的任何测试库或框架。没有特定的测试框架是必需的，完全取决于用户。尽管如此，TS-SDK 使用 [`Vitest`](https://vitest.dev/) 进行测试。
 
-### Wallet Test Utilities
+### 钱包测试实用工具
 
-You'll often want to create one or more test wallets when testing your contracts.
+在测试合同时，您经常会想要创建一个或多个测试钱包。
 
-For this, you can find two simple utilities on the account package:
+为此，您可以在账户包中找到两个简单的实用程序：
 
 - [`@fuel-ts/account`](https://github.com/FuelLabs/fuels-ts/tree/master/packages/account#test-utilities)
 
-On top of these two utilities, if you want to quickly get up and running with a local node, you can use the `launchNodeAndGetWallets` from the `@fuel-ts/account/test-utils` package.
+除了这两个实用程序之外，如果您想要快速启动并运行本地节点，您可以使用 `@fuel-ts/account/test-utils` 包中的 `launchNodeAndGetWallets`。
 
 ```ts
 import { launchNodeAndGetWallets } from "@fuel-ts/account/test-utils";
 
 const { stop, wallets, provider } = await launchNodeAndGetWallets();
 
-// ... do your tests - deploy contracts using the wallets, fetch info from the provider, etc.
+// ... 进行您的测试 - 使用钱包部署合同，从提供程序获取信息，等等。
 
-// stop the node when you're done
+// 测试完成后停止节点
 stop();
 ```
 
-See also:
+另请参阅：
 
-1. [Setting up test wallets](../wallets/test-wallets.md)
-2. [Testing in TS](./testing-in-ts.md)
+1. [设置测试钱包](../wallets/test-wallets.md)
+2. [在 TS 中进行测试](./testing-in-ts.md)

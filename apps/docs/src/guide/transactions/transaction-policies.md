@@ -1,20 +1,20 @@
-# Transaction Policies
+# 交易策略
 
-Transaction policies are rules that can govern how a transaction is processed, introduced by the [transaction parameters](./transaction-parameters.md) that you pass to a transaction request. The available policies are as follows:
+交易策略是可以规定交易如何处理的规则，由您传递给交易请求的[交易参数](./transaction-parameters.md)引入。可用的策略如下：
 
-1. Gas Price - Maximum gas price for transaction.
-1. Witness Limit - The maximum amount of witness data allowed for the transaction.
-1. Maturity - Block until which the transaction cannot be included.
-1. Max Fee - The maximum fee payable by this transaction.
+1. 燃气价格 - 交易的最大燃气价格。
+2. 见证人限制 - 交易允许的见证人数据的最大数量。
+3. 成熟期 - 交易不能被包含的区块。
+4. 最大费用 - 该交易可支付的最大费用。
 
-## Setting Transaction Policies
+## 设置交易策略
 
-The below snippet will show which transaction parameters set which policy:
+下面的片段将显示哪些交易参数设置了哪些策略：
 
 <<< @/../../docs-snippets/src/guide/transactions/transaction-policies.test.ts#transaction-policies-1{ts:line-numbers}
 
-## Retrieving Transaction Policies from a Transaction
+## 从交易中检索交易策略
 
-Policies used for a transaction can be retrieved from a transaction using a `TransactionResponse`. The below snippet will show how to retrieve the policies from a transaction:
+可以使用 `TransactionResponse` 从交易中检索用于交易的策略。下面的片段将显示如何从交易中检索策略：
 
 <<< @/../../docs-snippets/src/guide/transactions/transaction-policies.test.ts#transaction-policies-2{ts:line-numbers}

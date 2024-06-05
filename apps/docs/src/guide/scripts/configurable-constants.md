@@ -1,21 +1,21 @@
-# Script With Configurable
+# 具有可配置项的脚本
 
-In the same way as [contracts](../contracts/configurable-constants.md) and [predicates](../predicates/configurable-constants.md), Scripts also support configurable constants. This feature enables dynamic adjustment of certain values within your scripts.
+与[合约](../contracts/configurable-constants.md)和[断言](../predicates/configurable-constants.md)一样，脚本也支持可配置的常量。此功能使您可以动态调整脚本中的某些值。
 
-Configurable constants are fairly straightforward to add and set in your scripts.
+在脚本中添加和设置可配置的常量非常简单。
 
-Let's consider the following script:
+让我们考虑以下脚本：
 
 <<< @/../../docs-snippets/test/fixtures/forc-projects/sum-script/src/main.sw#script-with-configurable-contants-1{rust:line-numbers}
 
-In this script, `AMOUNT` is a configurable constant with a default value of `10`. The main function returns the sum of the `inputted_amount` and the configurable constant `AMOUNT`.
+在此脚本中，`AMOUNT` 是一个具有默认值 `10` 的可配置常量。主函数返回 `inputted_amount` 和可配置常量 `AMOUNT` 的总和。
 
-To change the value of the `AMOUNT` constant, we can use the `setConfigurableConstants` method as shown in the following example:
+要更改 `AMOUNT` 常量的值，我们可以使用 `setConfigurableConstants` 方法，如以下示例所示：
 
 <<< @/../../docs-snippets/src/guide/scripts/script-with-configurable.test.ts#script-with-configurable-contants-2{ts:line-numbers}
 
-In this example, we're setting a new value `81` for the `AMOUNT` constant. We then call the main function with an inputted value of `10`.
+在此示例中，我们为 `AMOUNT` 常量设置了一个新值 `81`。然后，我们调用主函数，输入值为 `10`。
 
-The expectation is that the script will return the sum of the inputted value and the new value of `AMOUNT`.
+期望的结果是脚本将返回输入值和 `AMOUNT` 新值的总和。
 
-This way, configurable constants in scripts allow for more flexibility and dynamic behavior during execution.
+这样，脚本中的可配置常量允许在执行过程中实现更灵活和动态的行为。
